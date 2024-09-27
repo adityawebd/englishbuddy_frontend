@@ -1,17 +1,28 @@
+import HeroSection from "@/components/HeroSection";
 import Layout from "../components/Layout";
+import HomeAbout from "@/components/HomeAbout";
+import HomeWhyChoose from "@/components/HomeWhyChoose";
+import OurMentors from "@/components/OurMentors";
+import Tests from "@/components/Tests";
+import Testimonials from "@/components/Testimonials";
+import ConnectLeaders from "@/components/ConnectLeaders";
+import LatestNews from "@/components/LatestNews";
+import Faq from "@/components/Faq";
+import Footer from "@/components/Footer";
 
-export default function  Home()
-{
-    return <Layout>
-        Home pAge
-
-        <div>
-        <br />
-        <br />
-        <br />
-        <br />
-
-        <a href="/about-us">About page</a>
-        </div>
+export default function Home() {
+  return (
+    <Layout>
+      <HeroSection />
+      <HomeAbout />
+      <HomeWhyChoose />
+      <OurMentors />
+      <Tests /> 
+      <Testimonials />
+      <ConnectLeaders />
+      <LatestNews />
+      <Faq />
+      <Footer />
     </Layout>
+  );
 }
