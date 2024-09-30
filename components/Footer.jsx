@@ -224,7 +224,7 @@ const Footer = () => {
 
           <div className=" py-10 text-white/70">
             <div className="flex justify-between items-center max-sm:flex-col max-sm:items-start">
-              <p>English Buddy</p>
+              <p><span className="font-semibold">English Buddy</span> | Design & Developed by <a href="https://rapiddigitalgrowth.com/" className="font-semibold hover:underline" target="_blank">Rapid Digital Growth</a></p>
               <p>Copyright &copy; {date.getFullYear()} All Rights Reserved</p>
             </div>
           </div>
