@@ -9,11 +9,11 @@ import { Ticket } from 'lucide-react'
 const menuItems = [
   {
     name: "Home",
-    href: "#",
+    href: "/",
   },
   {
     name: "About us",
-    href: "#",
+    href: "/about-us",
   },
   {
     name: "Schedules",
@@ -25,7 +25,11 @@ const menuItems = [
   },
   {
     name: "blog",
-    href: "#",
+    href: "/blogs",
+  },
+  {
+    name: "Contact us",
+    href: "/contact-us",
   },
 ];
 
@@ -37,7 +41,7 @@ export default function Nav() {
     }
   
     return (
-      <div className="relative w-full bg-white">
+      <div className="relative w-full bg-white border-b">
         <div className="mx-auto flex items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
           <div className="inline-flex items-center space-x-2">
             <Logo />

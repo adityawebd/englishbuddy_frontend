@@ -1,3 +1,4 @@
+import Footer from "./Footer";
 import Navbar from "./Navbar";
 import { useState } from "react";
 
@@ -10,6 +11,7 @@ export default function Layout({ children }) {
         <div>
           {children}
         </div>
+        <Footer />
       </div>
     </>
   );

@@ -20,8 +20,9 @@ const Testimonials = () => {
                   </div>
                   <h5 className="uppercase font-semibold mt-4">
                     {" "}
-                    i attended a conference recommended by konfero, and it
-                    exceed my expectations.
+                    
+                    EnglishBuddy has really helped me by providing best training for IELTS.I really for their incredible efforts.
+                              
                   </h5>
 
                   <div className="flex justify-center items-center gap-4 mt-10">
@@ -32,16 +33,16 @@ const Testimonials = () => {
                     />
                     <div>
                       <div className="uppercase font-bold text-base text-secondary text-left">
-                        jennifers s.
+                        mehul garg
                       </div>
                       <div className="uppercase font-semibold text-sm text-textClr text-left">
-                        marketing
+                        designation
                       </div>
                     </div>
                   </div>
                 </div>
                 <div className="border p-10 flex flex-col justify-center items-center text-center rounded-bl-3xl bg-primary max-sm:rounded-b-3xl">
-                  <a href="/testimonials" className="uppercase text-xl flex justify-center items-center text-center text-white font-bold h-[200px]">
+                  <a href="/testimonials" className="uppercase text-xl flex justify-center items-center text-center text-white font-bold h-[220px]">
                   view more <br />testimonials
                   </a>
                 </div>
@@ -55,8 +56,9 @@ const Testimonials = () => {
                   </div>
                   <h5 className="uppercase font-semibold mt-4">
                     {" "}
-                    i attended a conference recommended by konfero, and it
-                    exceed my expectations.
+                    
+                    Learning curve at EnglishBuddy was just superb. Highly recommended for english language test preparation.
+                              
                   </h5>
 
                   <div className="flex justify-center items-center gap-4 mt-10">
@@ -67,10 +69,10 @@ const Testimonials = () => {
                     />
                     <div>
                       <div className="uppercase font-bold text-base text-secondary text-left">
-                        jennifers s.
+                       kajal sharma
                       </div>
                       <div className="uppercase font-semibold text-sm text-textClr text-left">
-                        marketing
+                      designation
                       </div>
                     </div>
                   </div>
@@ -83,8 +85,9 @@ const Testimonials = () => {
                   </div>
                   <h5 className="uppercase font-semibold mt-4">
                     {" "}
-                    i attended a conference recommended by konfero, and it
-                    exceed my expectations.
+                    
+                    Learning curve at EnglishBuddy was just superb. Highly recommended for english language test preparation.
+                              
                   </h5>
 
                   <div className="flex justify-center items-center gap-4 mt-10">
@@ -95,10 +98,10 @@ const Testimonials = () => {
                     />
                     <div>
                       <div className="uppercase font-bold text-base text-secondary text-left">
-                        jennifers s.
+                        shreya dhir
                       </div>
                       <div className="uppercase font-semibold text-sm text-textClr text-left">
-                        marketing
+                      designation
                       </div>
                     </div>
                   </div>
@@ -118,9 +121,11 @@ const Testimonials = () => {
             </p>
 
             <ul className="mt-10">
-              <li className="uppercase font-semibold text-black flex gap-4 items-center mb-2"><span className="p-1 rounded-full bg-green-400"><Check size={15} /></span> black conference</li>
-              <li className="uppercase font-semibold text-black flex gap-4 items-center mb-2"><span className="p-1 rounded-full bg-green-400"><Check size={15} /></span> black conference</li>
-              <li className="uppercase font-semibold text-black flex gap-4 items-center mb-2"><span className="p-1 rounded-full bg-green-400"><Check size={15} /></span> black conference</li>
+              <li className="uppercase font-semibold text-black flex gap-4 items-center mb-2"><span className="p-1 rounded-full bg-green-400"><Check size={15} /></span> mehul garg</li>
+              <li className="uppercase font-semibold text-black flex gap-4 items-center mb-2"><span className="p-1 rounded-full bg-green-400"><Check size={15} /></span> kajal sharma</li>
+              <li className="uppercase font-semibold text-black flex gap-4 items-center mb-2"><span className="p-1 rounded-full bg-green-400"><Check size={15} /></span> shreya dhir</li>
+              <li className="uppercase font-semibold text-black flex gap-4 items-center mb-2"><span className="p-1 rounded-full bg-green-400"><Check size={15} /></span> natasha kapoor</li>
+              <li className="uppercase font-semibold text-black flex gap-4 items-center mb-2"><span className="p-1 rounded-full bg-green-400"><Check size={15} /></span> kavish vohra</li>
             </ul>
           </div>
         </div>

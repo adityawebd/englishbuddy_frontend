@@ -22,7 +22,6 @@ export default function Home() {
       <ConnectLeaders />
       <LatestNews />
       <Faq />
-      <Footer />
     </Layout>
   );
 }

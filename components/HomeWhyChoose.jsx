@@ -3,7 +3,7 @@ import React from "react";
 const HomeWhyChoose = () => {
   return (
     <>
-      <div className="text-xl uppercase text-center">why choose</div>
+      <div className="text-xl uppercase text-center">why choose us</div>
       <div className="text-4xl uppercase font-bold mt-2 pb-4 text-center">
         For itels coaching
       </div>
@@ -13,10 +13,9 @@ const HomeWhyChoose = () => {
           <div>
             <div className="bg-primary container mx-auto px-4 sm:px-6 md:px-8 lg:px-24 relative pt-48 max-sm:pt-10">
               <div className="bg-secondary rounded-3xl p-10 bg_outofbox absolute -top-10 mr-24 max-sm:relative max-sm:top-auto max-sm:mr-auto">
-                <h3 className="text-xl uppercase text-white"> our mission</h3>
+                <h3 className="text-xl uppercase text-white"> Our Strength</h3>
                 <div className="border-l border-white pl-5 uppercase text-white my-5">
-                  create a dynamic nad inclusive platform that fosters
-                  innovation, collaboartion, and knowledge.
+                Our students are well prepared to get qualified for best of international universities.
                 </div>
                 <p className="text-white/70 text-sm">
                   In publishing and graphic design, Lorem ipsum is a placeholder
@@ -26,10 +25,9 @@ const HomeWhyChoose = () => {
               </div>
 
               <div className="bg-white/20 shadow-xl rounded-t-3xl p-10 mt-16 max-sm:mt-10 ">
-                <h3 className="text-xl uppercase text-white"> our mission</h3>
+                <h3 className="text-xl uppercase text-white">Our Accolades</h3>
                 <div className="border-l border-white pl-5 uppercase text-white my-5">
-                  create a dynamic nad inclusive platform that fosters
-                  innovation, collaboartion, and knowledge.
+                Our team has been recognised as one of the best coaching experts for english proficiency test preparation.
                 </div>
                 <p className="text-white/70 text-sm">
                   In publishing and graphic design, Lorem ipsum is a placeholder
@@ -41,7 +39,7 @@ const HomeWhyChoose = () => {
           </div>
           <div>
             <div className="relative">
-              <div className="absolute -top-10 h-[552px] w-full max-sm:top-0 max-sm:h-auto">
+              <div className="absolute -top-10 h-[570px] w-full max-sm:top-0 max-sm:h-auto">
                 <img
                   src="/assets/images/why_choose_iltes.png"
                   alt=""

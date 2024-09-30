@@ -16,22 +16,22 @@ const HeroSection = () => {
   const upcomingEvents = [
     {
       _id: 1,
-      title: "digital technology",
+      title: "IELTS Session",
       date: "22 - 26 September 2024",
       time: "10:00 AM - 12:00 PM",
       link: "https://rapiddigitalgrowth.com/",
     },
     {
       _id: 2,
-      title: "french master class",
-      date: "22 - 26 September 2024",
+      title: "TOEFL Session",
+      date: "23 - 27 September 2024",
       time: "10:00 AM - 12:00 PM",
       link: "https://rapiddigitalgrowth.com/",
     },
     {
       _id: 3,
-      title: "english free course",
-      date: "22 - 26 September 2024",
+      title: "PTE Session",
+      date: "24 - 28 September 2024",
       time: "10:00 AM - 12:00 PM",
       link: "https://rapiddigitalgrowth.com/",
     },
@@ -46,24 +46,23 @@ const HeroSection = () => {
 
   return (
     <>
-      <div className="container relative mx-auto px-4 sm:px-6 md:px-8 lg:px-24 border">
+      <div className="container relative mx-auto px-4 sm:px-6 md:px-8 lg:px-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-1 py-10">
           <div>
             <div className="py-5">
               <h5 className="text-primary font-semibold text-lg uppercase">
-                Event Conference
+              English Prep<span className="text-secondary font-extrabold">X</span>perts
               </h5>
               <h1 className="text-primary font-semibold text-5xl uppercase mt-4">
                 Your Ultimate guide
               </h1>
               <h1 className="text-primary font-semibold text-5xl uppercase mt-1">
                 To{" "}
-                <span className="border-b-4 border-green-500">Conferences</span>
+                <span className="border-b-4 border-green-500">English Languages</span>
               </h1>
 
               <p className="text-md text-textClr mt-8 font-medium mb-10 lg:pr-64">
-                Your one-stop destination for all things related to conferences
-                and conventions.
+                Your one-stop destination for all things related to IELTS, TOEFL, PTE
               </p>
 
               <Link
