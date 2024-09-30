@@ -100,3 +100,98 @@
   background-color: var(--white-clr);
   color: var(--primary-clr);
 }
+
+
+
+
+/* ---------------------------------
+---------------------------------
+------ BLOG PAGE -------------
+---------------------------------
+--------------------------------- */
+.blog_content p {
+    font-family: sans-serif;
+    line-height: 1.4;
+    font-size: 16px;
+    font-weight: 400;
+    color: rgb(69, 69, 69);
+  }
+  
+  .blog_content a {
+    color: black;
+    font-size: 20px;
+  }
+  .blog_content a:hover {
+    text-decoration: underline;
+    color: #555;
+  }
+  
+  .blog_content h1 {
+    font-family: sans-serif;
+    line-height: 1.6;
+    font-size: 36px;
+  }
+  .blog_content h2 {
+    font-family: sans-serif;
+    line-height: 1.6;
+    font-size: 30px;
+  }
+  .blog_content h3 {
+    font-family: sans-serif;
+    line-height: 1.6;
+    font-size: 24px;
+  }
+  .blog_content h4 {
+    font-family: sans-serif;
+    line-height: 1.6;
+    font-size: 20px;
+  }
+  
+  .blog_content h5 {
+    font-family: sans-serif;
+    line-height: 1.6;
+    font-size: 18px;
+  }
+  .blog_content h6 {
+    font-family: sans-serif;
+    line-height: 1.6;
+    font-size: 16px;
+  }
+  
+  .blog_content ul {
+    margin-left: 20px;
+  }
+  
+  .blog_content ol {
+    margin-left: 20px;
+  }
+  
+  .blog_content ul li {
+    list-style: disc;
+    font-family: sans-serif;
+    line-height: 1.4;
+    font-size: 16px;
+    font-weight: 400;
+    color: rgb(69, 69, 69);
+  }
+  
+  .blog_content ol li {
+    list-style: disc;
+    font-family: sans-serif;
+    line-height: 1.4;
+    font-size: 16px;
+    font-weight: 400;
+    color: rgb(69, 69, 69);
+  }
+  
+  .blog_content img {
+    border-radius: 4px;
+    width: 100%;
+  }
+  
+  .blog_content iframe {
+    margin-top: 10px;
+    border-radius: 4px;
+    width: 325px;
+  }
+  

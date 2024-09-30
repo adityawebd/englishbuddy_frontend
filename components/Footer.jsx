@@ -8,7 +8,7 @@ const Footer = () => {
 
   return (
     <>
-      <div className="bg-primary">
+      <div className="bg-primary developedByAdityaRajGupta">
         <div className="container relative mx-auto px-4 sm:px-6 md:px-8 lg:px-24">
           <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-1 py-10 border-b border-white/50">
             <div className="">
@@ -62,7 +62,7 @@ const Footer = () => {
               <ul className="text-white/70 mt-5 ">
                 <li className="mb-2">
                   <Link
-                    href=""
+                    href="/about-us"
                     prefetch={true}
                     className="transition duration-500 hover:border-b pb-1"
                   >
@@ -80,7 +80,7 @@ const Footer = () => {
                 </li>
                 <li className="mb-2">
                   <Link
-                    href=""
+                    href="/blogs"
                     prefetch={true}
                     className="transition duration-500 hover:border-b pb-1"
                   >
@@ -89,7 +89,7 @@ const Footer = () => {
                 </li>
                 <li className="mb-2">
                   <Link
-                    href=""
+                    href="/contact-us"
                     prefetch={true}
                     className="transition duration-500 hover:border-b pb-1"
                   >
@@ -105,7 +105,7 @@ const Footer = () => {
               <ul className="text-white/70 mt-5 ">
                 <li className="mb-2">
                   <Link
-                    href=""
+                    href="/tnc"
                     prefetch={true}
                     className="transition duration-500 hover:border-b pb-1"
                   >
@@ -114,7 +114,7 @@ const Footer = () => {
                 </li>
                 <li className="mb-2">
                   <Link
-                    href=""
+                    href="/privacy-policy"
                     prefetch={true}
                     className="transition duration-500 hover:border-b pb-1"
                   >
@@ -127,7 +127,7 @@ const Footer = () => {
                     prefetch={true}
                     className="transition duration-500 hover:border-b pb-1"
                   >
-                    Discliamer
+                    Tests
                   </Link>
                 </li>
                 <li className="mb-2">
@@ -136,7 +136,7 @@ const Footer = () => {
                     prefetch={true}
                     className="transition duration-500 hover:border-b pb-1"
                   >
-                    FAQ
+                    Sitemap
                   </Link>
                 </li>
               </ul>

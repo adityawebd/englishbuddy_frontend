@@ -144,7 +144,7 @@ export default function Blog() {
                           className="rounded h-[75%] w-full border mb-2"
                         />
                         <Link
-                          href={"/blogs/view/" + blog.url}
+                          href={"/blogs/" + blog.url}
                           className="text-xl mt-3 text-black font-semibold"
                         >
                           {blog.title.length > 20
@@ -155,7 +155,7 @@ export default function Blog() {
                           Date: {new Date(blog.date).toLocaleDateString()}
                         </div>
                         <Link
-                          href={"/blogs/view/" + blog.url}
+                          href={"/blogs/" + blog.url}
                           className="rounded-full py-1 text-xs text-black flex items-center hover:text-violet-500"
                         >
                           Read this blog{" "}
@@ -192,7 +192,7 @@ export default function Blog() {
                         />
                         <div>
                           <Link
-                            href={"/blogs/view/" + recentBlog.url}
+                            href={"/blogs/" + recentBlog.url}
                             className="text-lg text-black font-normal line-clamp-3 max-sm:text-base"
                           >
                             {/* {recentBlog.title.length > 20
