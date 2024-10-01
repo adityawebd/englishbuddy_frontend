@@ -33,6 +33,7 @@
 
 .contact_form {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -45,7 +46,8 @@
   width: 100%;
 }
 
-.contact_form form label {
+.contact_form label {
+  /* border: 1px solid red; */
   width: 100%;
   font-size: 15px;
   color: var(--primary-clr);
@@ -195,3 +197,5 @@
     width: 325px;
   }
   
+
+
