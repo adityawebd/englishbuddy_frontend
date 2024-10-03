@@ -198,4 +198,38 @@
   }
   
 
+  
+/* ---------------------------------
+---------------------------------
+------ OFFER BANNER  -------------
+---------------------------------
+--------------------------------- */
+  .swiper-button-prev {
+    left: -30px !important;
+    transition: all 0.5s;
+  }
+  .swiper-button-next {
+    right: -30px !important;
+    transition: all 0.5s;
+  }
+.swiper-button-prev::after {
+  background-color: var(--primary-clr);
+  color: var(--white-clr) !important;
+  font-size: 16px !important;
+  padding: 10px 12px !important;
+  left: -10px !important;
+}
+.swiper-button-next::after {
+  background-color: var(--primary-clr);
+  color: var(--white-clr) !important;
+  font-size: 16px !important;
+  padding: 10px 12px !important;
+}
 
+.offerBannerWrapper:hover  .swiper-button-prev {
+  left: 30px !important;
+}
+
+.offerBannerWrapper:hover  .swiper-button-next {
+  right: 30px !important;
+}

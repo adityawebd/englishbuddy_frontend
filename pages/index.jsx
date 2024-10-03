@@ -9,11 +9,13 @@ import ConnectLeaders from "@/components/ConnectLeaders";
 import LatestNews from "@/components/LatestNews";
 import Faq from "@/components/Faq";
 import Footer from "@/components/Footer";
+import OfferBanner from "@/components/OfferBanner";
 
 export default function Home() {
   return (
     <Layout>
       <HeroSection />
+      <OfferBanner />
       <HomeAbout />
       <HomeWhyChoose />
       <OurMentors />

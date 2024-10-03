@@ -8,6 +8,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 import { MapPin, CalendarDays, Timer, Link2 } from "lucide-react";
+import Head from "next/head";
 
 const HeroSection = () => {
   const date = new Date();
@@ -37,16 +38,12 @@ const HeroSection = () => {
     },
   ];
 
-  const offerBanner = [
-    {
-      _id: 1,
-      imageURL: "",
-    },
-  ];
-
   return (
     <>
-      <div className="container relative mx-auto px-4 sm:px-6 md:px-8 lg:px-24">
+    <Head>
+      <meta name="viewport" /> 
+    </Head>
+      <div className="container relative mx-auto px-4 sm:px-6 md:px-8 lg:px-24 pt-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-1 py-10">
           <div>
             <div className="py-5">
@@ -193,20 +190,7 @@ const HeroSection = () => {
         </div>
       </div>
 
-      <div>
-        {offerBanner.map((banner) => (
-          <img
-            key={banner._id}
-            src={
-              banner.imageURL
-                ? banner.imageURL
-                : "/assets/offer_banner_default.png"
-            }
-            alt="offer-banner-image"
-            className="w-full lg:h-[400px] md:h-[220px] max-sm:h-[100px]"
-          />
-        ))}
-      </div>
+      
     </>
   );
 };

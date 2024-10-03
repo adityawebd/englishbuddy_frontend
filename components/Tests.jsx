@@ -45,8 +45,18 @@ const Tests = () => {
 
       <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-24">
         <div className="flex flex-col justify-center items-center">
-          <div className="text-xl uppercase text-white text-center">tests</div>
-          <div className="text-4xl uppercase font-bold mt-4 pb-4 text-white text-center w-[60%] max-sm:text-2xl max-sm:w-[100%]">
+          <div
+            className="text-xl uppercase text-white text-center"
+            data-aos="fade-up"
+            data-aos-duration="500"
+          >
+            tests
+          </div>
+          <div
+            className="text-4xl uppercase font-bold mt-4 pb-4 text-white text-center w-[60%] max-sm:text-2xl max-sm:w-[100%]"
+            data-aos="fade-up"
+            data-aos-duration="700"
+          >
             our consummate & experienced team of mentors help students
           </div>
         </div>
@@ -57,6 +67,8 @@ const Tests = () => {
               <div
                 key={index}
                 className="rounded-2xl w-full flex border border-textClr mb-5 max-sm:flex-col"
+                data-aos="fade-up"
+                data-aos-duration="3000"
               >
                 <div className="w-[30%] max-sm:w-full rounded-2xl relative">
                   <img

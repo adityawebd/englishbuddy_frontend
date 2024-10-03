@@ -9,21 +9,38 @@ const HomeAbout = () => {
       <div className="container relative my-10 mx-auto px-4 sm:px-6 md:px-8 lg:px-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-1 py-10">
           <div>
-            <div className="text-xl uppercase">about us</div>
-            <div className="text-4xl uppercase font-bold mt-2 pb-4">
+            <div
+              className="text-xl uppercase"
+              data-aos="fade-up"
+              data-aos-duration="500"
+            >
+              about us
+            </div>
+            <div
+              className="text-4xl uppercase font-bold mt-2 pb-4"
+              data-aos="fade-up"
+              data-aos-duration="700"
+            >
               what makes us special in {date.getFullYear()}
             </div>
             <img
               src="https://www.glion.edu/wp-content/uploads/2023/07/Entrepreneur-vs-business-owner-whats-the-difference-in-hospitality.jpg"
               alt=""
               className="rounded-2xl mt-5 w-[600px]"
+              data-aos="zoom-in-right"
+              data-aos-duration="700"
             />
           </div>
           <div className="md:mt-10 max-sm:mt-10">
-            <h3 className="text-lg font-semibold">
-            EnglishBuddy started with the aim of carving students’ score who aspire to get a remarkable score in English proficiency tests. We aim to bring out the best of education to those who aspire.
+            <h3
+              className="text-lg font-semibold"
+              data-aos="fade-up"
+              data-aos-duration="550"
+            >
+              EnglishBuddy started with the aim of carving students’ score who
+              aspire to get a remarkable score in English proficiency tests. We
+              aim to bring out the best of education to those who aspire.
             </h3>
-
 
             <div className="mt-5 pt-4">
               <div className="flex justify-start items-start mb-5 max-sm:gap-4">
@@ -32,12 +49,25 @@ const HomeAbout = () => {
                     arc=""
                     alt=""
                     className="w-[90px] h-[90px] border rounded-xl"
+                    data-aos="fade-right"
+                    data-aos-duration="600"
                   />
                 </div>
                 <div className="w-[80%] max-sm:w-[70%]">
-                  <h3 className="uppercase text-lg font-semibold">Our Purpose</h3>
-                  <p className="text-md text-textClr">
-                  To provide optimum teaching experience that improves the lives of the students who have an aspiration to go abroad.
+                  <h3
+                    className="uppercase text-lg font-semibold"
+                    data-aos="fade-up"
+                    data-aos-duration="600"
+                  >
+                    Our Purpose
+                  </h3>
+                  <p
+                    className="text-md text-textClr"
+                    data-aos="fade-up"
+                    data-aos-duration="600"
+                  >
+                    To provide optimum teaching experience that improves the
+                    lives of the students who have an aspiration to go abroad.
                   </p>
                 </div>
               </div>
@@ -47,12 +77,25 @@ const HomeAbout = () => {
                     arc=""
                     alt=""
                     className="w-[90px] h-[90px] border rounded-xl"
+                    data-aos="fade-right"
+                    data-aos-duration="700"
                   />
                 </div>
                 <div className="w-[80%] max-sm:w-[70%]">
-                  <h3 className="uppercase text-lg font-semibold">Our Values</h3>
-                  <p className="text-md text-textClr">
-                  We function on integrity, leadership, passion for winning and building trust.
+                  <h3
+                    className="uppercase text-lg font-semibold"
+                    data-aos="fade-up"
+                    data-aos-duration="700"
+                  >
+                    Our Values
+                  </h3>
+                  <p
+                    className="text-md text-textClr"
+                    data-aos="fade-up"
+                    data-aos-duration="700"
+                  >
+                    We function on integrity, leadership, passion for winning
+                    and building trust.
                   </p>
                 </div>
               </div>
@@ -62,12 +105,25 @@ const HomeAbout = () => {
                     arc=""
                     alt=""
                     className="w-[90px] h-[90px] border rounded-xl"
+                    data-aos="fade-right"
+                    data-aos-duration="800"
                   />
                 </div>
                 <div className="w-[80%] max-sm:w-[70%]">
-                  <h3 className="uppercase text-lg font-semibold">Our Principles</h3>
-                  <p className="text-md text-textClr">
-                  We value mastery and believe that continual innovation in teaching methodology is the key to success.
+                  <h3
+                    className="uppercase text-lg font-semibold"
+                    data-aos="fade-up"
+                    data-aos-duration="800"
+                  >
+                    Our Principles
+                  </h3>
+                  <p
+                    className="text-md text-textClr"
+                    data-aos="fade-up"
+                    data-aos-duration="800"
+                  >
+                    We value mastery and believe that continual innovation in
+                    teaching methodology is the key to success.
                   </p>
                 </div>
               </div>
