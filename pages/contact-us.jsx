@@ -22,7 +22,7 @@ export default function About() {
         <div className=" py-10">
           <div className="flex flex-col justify-center items-center">
             <div className="text-lg bg-secondary text-white rounded-full px-4 py-1">
-              Contact Us avi
+              Contact Us
             </div>
             <div className="text-3xl max-sm:text-3xl font-bold mt-4 text-center">
               Contact English Buddy
