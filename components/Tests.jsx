@@ -66,7 +66,7 @@ const Tests = () => {
             {testItems.map((test, index) => (
               <div
                 key={index}
-                className="rounded-2xl w-full flex border border-textClr mb-5 max-sm:flex-col"
+                className="rounded-2xl w-full flex border border-textClr mb-5 max-sm:flex-col animated-border-box"
                 data-aos="fade-up"
                 data-aos-duration="3000"
               >
@@ -76,6 +76,7 @@ const Tests = () => {
                     alt={test.title}
                     className="h-[100%] w-full rounded-2xl"
                   />
+                  
                   <div className="absolute bottom-0 left-10 bg-primary/60 rounded-t-2xl p-5 flex flex-col justify-center items-center">
                     <div className="uppercase text-white/80 font-semibold">
                       ticket

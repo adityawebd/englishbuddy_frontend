@@ -40,26 +40,30 @@ const HeroSection = () => {
 
   return (
     <>
-    <Head>
-      <meta name="viewport" /> 
-    </Head>
+      <Head>
+        <meta name="viewport" />
+      </Head>
       <div className="container relative mx-auto px-4 sm:px-6 md:px-8 lg:px-24 pt-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-1 py-10">
           <div>
             <div className="py-5">
               <h5 className="text-primary font-semibold text-lg uppercase">
-              English Prep<span className="text-secondary font-extrabold">X</span>perts
+                English Prep
+                <span className="text-secondary font-extrabold">X</span>perts
               </h5>
               <h1 className="text-primary font-semibold text-5xl uppercase mt-4">
                 Your Ultimate guide
               </h1>
               <h1 className="text-primary font-semibold text-5xl uppercase mt-1">
                 To{" "}
-                <span className="border-b-4 border-green-500">English Languages</span>
+                <span className="border-b-4 border-green-500">
+                  English Languages
+                </span>
               </h1>
 
               <p className="text-md text-textClr mt-8 font-medium mb-10 lg:pr-64">
-                Your one-stop destination for all things related to IELTS, TOEFL, PTE
+                Your one-stop destination for all things related to IELTS,
+                TOEFL, PTE
               </p>
 
               <Link
@@ -86,14 +90,35 @@ const HeroSection = () => {
                       pagination={{ clickable: true }}
                       scrollbar={{ draggable: true }}
                       breakpoints={{
+                        // Mobile small (smaller than 500px)
+                        320: {
+                          slidesPerView: 2, // 1 slide on very small screens
+                          spaceBetween: 5,
+                        },
+                        // Mobile medium (around 500px)
                         500: {
-                          slidesPerView: 3,
+                          slidesPerView: 2,
+                          spaceBetween: 10,
                         },
-                        780: {
-                          slidesPerView: 3,
+                        // Tablets (around 768px)
+                        768: {
+                          slidesPerView: 3.5, // Can show partial next slide
+                          spaceBetween: 15,
                         },
+                        // Tablets large (around 1024px)
+                        1024: {
+                          slidesPerView: 2.5, // Showing 2 slides
+                          spaceBetween: 20,
+                        },
+                        // Laptops (around 1300px)
                         1300: {
-                          slidesPerView: 3,
+                          slidesPerView: 2.5, // Show 2.5 slides
+                          spaceBetween: 20,
+                        },
+                        // Desktop (larger than 1500px)
+                        1500: {
+                          slidesPerView: 2.5, // Show 3 full slides
+                          spaceBetween: 20,
                         },
                       }}
                       // navigation={true}
@@ -145,14 +170,35 @@ const HeroSection = () => {
                   pagination={{ clickable: true }}
                   scrollbar={{ draggable: true }}
                   breakpoints={{
+                    // Mobile small (smaller than 500px)
+                    320: {
+                      slidesPerView: 1, // 1 slide on very small screens
+                      spaceBetween: 5,
+                    },
+                    // Mobile medium (around 500px)
                     500: {
                       slidesPerView: 1,
+                      spaceBetween: 10,
                     },
-                    780: {
-                      slidesPerView: 1,
+                    // Tablets (around 768px)
+                    768: {
+                      slidesPerView: 1, // Can show partial next slide
+                      spaceBetween: 15,
                     },
+                    // Tablets large (around 1024px)
+                    1024: {
+                      slidesPerView: 1, // Showing 2 slides
+                      spaceBetween: 20,
+                    },
+                    // Laptops (around 1300px)
                     1300: {
-                      slidesPerView: 1,
+                      slidesPerView: 1, // Show 2.5 slides
+                      spaceBetween: 25,
+                    },
+                    // Desktop (larger than 1500px)
+                    1500: {
+                      slidesPerView: 1, // Show 3 full slides
+                      spaceBetween: 30,
                     },
                   }}
                   // navigation={true}
@@ -189,8 +235,6 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-
-      
     </>
   );
 };

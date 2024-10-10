@@ -44,13 +44,22 @@ const HomeAbout = () => {
 
             <div className="mt-5 pt-4">
               <div className="flex justify-start items-start mb-5 max-sm:gap-4">
-                <div className="w-[20%] max-sm:w-[30%]">
+                <div className="w-[20%] max-sm:w-[30%] relative group">
+                  {/* Default image */}
                   <img
-                    arc=""
-                    alt=""
-                    className="w-[90px] h-[90px] border rounded-xl"
+                    src="/assets/icons/purpose_red.png"
+                    alt="purpose icon"
+                    className="w-[80px] h-[80px] border rounded-xl bg-secondary/10 group-hover:hidden p-4  transition-all duration-500 ease-in-out" // Hide on hover
                     data-aos="fade-right"
-                    data-aos-duration="600"
+                    data-aos-duration="800"
+                  />
+                  {/* Image to display on hover */}
+                  <img
+                    src="/assets/icons/purpose_white.png"
+                    alt="purpose icon on hover"
+                    className="w-[80px] h-[80px] border rounded-xl bg-secondary hidden group-hover:block  p-4  transition-all duration-500 ease-in-out" // Show on hover
+                    data-aos="fade-right"
+                    data-aos-duration="800"
                   />
                 </div>
                 <div className="w-[80%] max-sm:w-[70%]">
@@ -72,13 +81,22 @@ const HomeAbout = () => {
                 </div>
               </div>
               <div className="flex justify-start items-start mb-5 max-sm:gap-4">
-                <div className="w-[20%] max-sm:w-[30%]">
+                <div className="w-[20%] max-sm:w-[30%] relative group">
+                  {/* Default image */}
                   <img
-                    arc=""
-                    alt=""
-                    className="w-[90px] h-[90px] border rounded-xl"
+                    src="/assets/icons/value_red.png"
+                    alt="value icon"
+                    className="w-[80px] h-[80px] border rounded-xl bg-secondary/10 group-hover:hidden p-4  transition-all duration-500 ease-in-out" // Hide on hover
                     data-aos="fade-right"
-                    data-aos-duration="700"
+                    data-aos-duration="800"
+                  />
+                  {/* Image to display on hover */}
+                  <img
+                    src="/assets/icons/value_white.png"
+                    alt="value icon on hover"
+                    className="w-[80px] h-[80px] border rounded-xl bg-secondary hidden group-hover:block  p-4  transition-all duration-500 ease-in-out" // Show on hover
+                    data-aos="fade-right"
+                    data-aos-duration="800"
                   />
                 </div>
                 <div className="w-[80%] max-sm:w-[70%]">
@@ -100,11 +118,20 @@ const HomeAbout = () => {
                 </div>
               </div>
               <div className="flex justify-start items-start mb-5 max-sm:gap-4">
-                <div className="w-[20%] max-sm:w-[30%]">
+                <div className="w-[20%] max-sm:w-[30%] relative group">
+                  {/* Default image */}
                   <img
-                    arc=""
-                    alt=""
-                    className="w-[90px] h-[90px] border rounded-xl"
+                    src="/assets/icons/principle_red.png"
+                    alt="principle icon"
+                    className="w-[80px] h-[80px] border rounded-xl bg-secondary/10 group-hover:hidden p-4  transition-all duration-500 ease-in-out" // Hide on hover
+                    data-aos="fade-right"
+                    data-aos-duration="800"
+                  />
+                  {/* Image to display on hover */}
+                  <img
+                    src="/assets/icons/principle_white.png"
+                    alt="principle icon on hover"
+                    className="w-[80px] h-[80px] border rounded-xl bg-secondary hidden group-hover:block  p-4  transition-all duration-500 ease-in-out" // Show on hover
                     data-aos="fade-right"
                     data-aos-duration="800"
                   />
