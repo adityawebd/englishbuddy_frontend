@@ -67,7 +67,7 @@ const Tests = () => {
               <div
                 key={index}
                 className="rounded-2xl w-full flex border border-textClr mb-5 max-sm:flex-col animated-border-box"
-                data-aos="fade-up"
+                data-aos="zoom-in-up"
                 data-aos-duration="3000"
               >
                 <div className="w-[30%] max-sm:w-full rounded-2xl relative">
@@ -134,7 +134,7 @@ const Tests = () => {
         </div>
       </div>
 
-      <div className="h-full w-[10%] border-textClr/20"></div>
+      {/* <div className="h-full w-[10%] border-textClr/20"></div> */}
     </div>
   );
 };

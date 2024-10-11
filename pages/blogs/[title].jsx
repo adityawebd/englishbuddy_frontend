@@ -113,7 +113,7 @@ export default function Page({ params }) {
 
   return (
     <Layout>
-      <div className="container lg:px-32 py-10">
+      <div className="container lg:px-32 pb-10 pt-28">
         <div className="flex max-sm:flex-col">
           <div className="w-2/3 px-2 max-sm:w-full">
             <div className="flex justify-center w-full px-3 pb-3">

@@ -5,6 +5,8 @@ import { useState } from "react";
 
 import AOS from "aos"; // for react aos animation
 import "aos/dist/aos.css"; // for react aos animation
+import BackToTop from "./BackToTop";
+import WhatsAppButton from "./WhatsAppButton";
 
 export default function Layout({ children }) {
 
@@ -24,6 +26,8 @@ export default function Layout({ children }) {
           {children}
         </div>
         <Footer />
+        <BackToTop />
+        <WhatsAppButton />
       </div>
     </>
   );

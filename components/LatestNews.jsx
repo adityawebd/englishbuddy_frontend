@@ -53,7 +53,7 @@ const LatestNews = () => {
           <div></div>
         </div>
 
-        <div>
+        <div className="latestNewCards">
           <Swiper
             spaceBetween={10}
             slidesPerView={1.5}
@@ -93,13 +93,13 @@ const LatestNews = () => {
           >
             {latestNews.map((data) => (
               <SwiperSlide key={data._id}>
-                <div>
-                  <figure className="relative w-full overflow-hidden rounded-3xl">
+                <div className="p-2 rounded-3xl">
+                  <figure className="relative w-full overflow-hidden rounded-3xl animated-border-box-white p-1">
                     <img
                       src={data.imageURL}
                       alt={data.title}
                       loading="lazy"
-                      className="rounded-3xl h-[250px] w-full transition duration-700 hover:scale-110"
+                      className="rounded-3xl h-[250px] w-full transition duration-700 "
                     />
                     <div className="absolute bottom-5 left-5 bg-green-400 rounded-3xl py-1 px-3 text-xs font-semibold shadow-2xl">
                       {data.tag}

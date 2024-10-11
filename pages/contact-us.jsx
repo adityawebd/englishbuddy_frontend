@@ -18,7 +18,7 @@ import ContactForm from "@/components/ContactForm";
 export default function About() {
   return (
     <Layout>
-      <div className="contact-page-content">
+      <div className="contact-page-content pt-16">
         <div className=" py-10">
           <div className="flex flex-col justify-center items-center">
             <div className="text-lg bg-secondary text-white rounded-full px-4 py-1">
@@ -29,10 +29,10 @@ export default function About() {
             </div>
             <div className="text-3xl max-sm:text-3xl font-bold text-center">
               for your queries
-            </div>            
+            </div>
 
             <div className="contact_us_card_wrapper flex justify-center items-center flex-wrap my-5">
-              <div className="bg-primary rounded-2xl p-10 w-[400px] h-[260px] max-sm:w-[100%] max-sm:h-[auto] mx-3 my-3">
+              <div className="bg-primary rounded-2xl p-10 w-[400px] h-[260px] max-sm:w-[100%] max-sm:h-[auto] mx-3 my-3 ">
                 <span className="text-secondary">
                   <Headset size={30} />
                 </span>
@@ -40,10 +40,12 @@ export default function About() {
                   Contact Phone Number
                 </h5>
                 <a href="tel:+919587925026" className="text-white block mb-2">
-                  <span className="text-white/70">New Delhi:</span> +91 9587925026
+                  <span className="text-white/70">New Delhi:</span> +91
+                  9587925026
                 </a>
                 <a href="tel:+917888825151" className="text-white block">
-                <span className="text-white/70">Amritsar:</span> +91 7888825151
+                  <span className="text-white/70">Amritsar:</span> +91
+                  7888825151
                 </a>
               </div>
               <div className="bg-primary rounded-2xl p-10 w-[400px] h-[260px] max-sm:w-[100%] max-sm:h-[auto] mx-3 my-3">
@@ -53,10 +55,7 @@ export default function About() {
                 <h5 className="my-3 text-white/80 font-semibold text-xl">
                   Our Email Address
                 </h5>
-                <a
-                  href="mailto:info@englishbuddy.co.in"
-                  className="text-white"
-                >
+                <a href="mailto:info@englishbuddy.co.in" className="text-white">
                   info@englishbuddy.co.in
                 </a>
               </div>
@@ -68,18 +67,32 @@ export default function About() {
                   Our Location
                 </h5>
                 <a href="#map" className="text-white flex justify-between">
-                  <spa className="text-white/70 w-[50%]">New Delhi:</spa> <span>Sector-5, Aggarwal Tower MLU Plaza, Dwarka New Delhi-110075</span>
+                  <spa className="text-white/70 w-[50%]">New Delhi:</spa>{" "}
+                  <span>
+                    Sector-5, Aggarwal Tower MLU Plaza, Dwarka New Delhi-110075
+                  </span>
                 </a>
                 <a href="#map" className="text-white flex justify-between">
-                    <spa className="text-white/70 w-[50%]">Amritsar:</spa> <span>Sector-5, Aggarwal Tower MLU Plaza, Dwarka New Delhi-110075</span>
+                  <spa className="text-white/70 w-[50%]">Amritsar:</spa>{" "}
+                  <span>
+                    Sector-5, Aggarwal Tower MLU Plaza, Dwarka New Delhi-110075
+                  </span>
                 </a>
               </div>
             </div>
           </div>
         </div>
 
-        <ContactForm />
-
+        <div className="contactFormStyle">
+          <div className="contactFormStyleWrapper ">
+            <div className="contactFormStyleBookImg">
+              <img src="/assets/images/eb_book_img.png" alt="" />
+            </div>
+            <div className="contactFormStyleForm">
+              <ContactForm />
+            </div>
+          </div>
+        </div>
 
         <div className="container-sm py-5 mt-16" id="map">
           <div className="flex flex-col justify-center items-center">

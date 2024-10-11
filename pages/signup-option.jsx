@@ -7,7 +7,7 @@ import Link from "next/link";
 export default function SignUpOption() {
   return (
     <Layout>
-      <div className="container mx-auto lg:px-28 py-10">
+      <div className="pt-28 container mx-auto lg:px-28 py-10">
         <div className="flex justify-center items-center">
           <div className="p-10 w-[60%] max-sm:w-[90%] border bg-primary/10">
             {/* <h1 className="text-3xl font-bold text-white bg-primary block">

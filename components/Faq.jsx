@@ -36,7 +36,7 @@ const Faq = () => {
         {faqData.map((item, index) => (
           <div
             key={index}
-            className="border-b-2 overflow-hidden transition-all"
+            className="border-b-4 border-secondary/20 overflow-hidden transition-all"
           >
             <button
               className="flex justify-between items-center w-full px-4 py-3"

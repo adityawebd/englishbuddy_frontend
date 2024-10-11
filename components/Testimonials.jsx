@@ -1,77 +1,91 @@
-import React from "react";
-import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa"; // Importing all necessary star icons
+import React, { useState, useRef, useEffect } from "react";
+import Slider from "react-slick";
+import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
 import { Check } from "lucide-react";
-
-// Swiper.js imports
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, A11y } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Testimonials = () => {
   const testimonialsData = [
     {
       _id: 1,
       stars: 4.5,
-      feedback:
-        "EnglishBuddy has really helped me by providing best training for IELTS. I really appreciate their incredible efforts.",
+      feedback: "EnglishBuddy has really helped me by providing best training for IELTS. I really appreciate their incredible efforts.",
       personName: "Mehul Garg",
       imageURL: "",
     },
     {
       _id: 2,
       stars: 3,
-      feedback:
-        "I improved my English speaking skills a lot thanks to EnglishBuddy's great training sessions.",
+      feedback: "I improved my English speaking skills a lot thanks to EnglishBuddy's great training sessions.",
       personName: "Kajal Sharma",
       imageURL: "",
     },
     {
       _id: 3,
       stars: 5,
-      feedback:
-        "EnglishBuddy's program is fantastic. I highly recommend it to anyone looking to improve their IELTS scores.",
+      feedback: "EnglishBuddy's program is fantastic. I highly recommend it to anyone looking to improve their IELTS scores.",
       personName: "Shreya Dhir",
       imageURL: "",
     },
   ];
 
-  // Function to render stars dynamically
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  // Ref for react-slick Slider
+  const slickSliderRef = useRef(null);
+
   const renderStars = (rating) => {
-    const fullStars = Math.floor(rating); // Get the number of full stars
-    const halfStar = rating % 1 !== 0; // Check if there's a half star
-    const emptyStars = 5 - Math.ceil(rating); // Calculate remaining empty stars
+    const fullStars = Math.floor(rating);
+    const halfStar = rating % 1 !== 0;
+    const emptyStars = 5 - Math.ceil(rating);
 
     const stars = [];
 
-    // Add full stars
     for (let i = 0; i < fullStars; i++) {
-      stars.push(
-        <FaStar key={`full-${i}`} size={14} className="text-secondary" />
-      );
+      stars.push(<FaStar key={`full-${i}`} size={14} className="text-secondary" />);
     }
 
-    // Add half star if applicable
     if (halfStar) {
-      stars.push(
-        <FaStarHalfAlt key="half" size={14} className="text-secondary" />
-      );
+      stars.push(<FaStarHalfAlt key="half" size={14} className="text-secondary" />);
     }
 
-    // Add empty stars
     for (let i = 0; i < emptyStars; i++) {
-      stars.push(
-        <FaRegStar key={`empty-${i}`} size={14} className="text-secondary" />
-      );
+      stars.push(<FaRegStar key={`empty-${i}`} size={14} className="text-secondary" />);
     }
 
     return stars;
   };
 
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    vertical: true,
+    verticalSwiping: true,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    beforeChange: (current, next) => setActiveIndex(next),
+  };
+
+  // Syncing the Swiper and react-slick vertical slider
+  useEffect(() => {
+    if (slickSliderRef.current && activeIndex !== null) {
+      slickSliderRef.current.slickGoTo(activeIndex);
+    }
+  }, [activeIndex]);
+
   return (
     <div className="container relative mx-auto px-4 sm:px-6 md:px-8 lg:px-24">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 max-sm:gap-2 py-20">
-        {/* First div spans full width on mobile, half on medium screens, and two-thirds on large screens */}
+        {/* Swiper Section */}
         <div className="col-span-1 md:col-span-1 lg:col-span-2">
           <Swiper
             spaceBetween={10}
@@ -82,60 +96,30 @@ const Testimonials = () => {
               disableOnInteraction: false,
               pauseOnMouseEnter: true,
             }}
+            onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)} // Sync active index with slick slider
             pagination={{ clickable: true }}
             scrollbar={{ draggable: true }}
             breakpoints={{
-              // Mobile small (smaller than 500px)
-              320: {
-                slidesPerView: 1, // 1 slide on very small screens
-                spaceBetween: 5,
-              },
-              // Mobile medium (around 500px)
-              500: {
-                slidesPerView: 1,
-                spaceBetween: 10,
-              },
-              // Tablets (around 768px)
-              768: {
-                slidesPerView: 1, // Can show partial next slide
-                spaceBetween: 15,
-              },
-              // Tablets large (around 1024px)
-              1024: {
-                slidesPerView: 1, // Showing 2 slides
-                spaceBetween: 20,
-              },
-              // Laptops (around 1300px)
-              1300: {
-                slidesPerView: 1, // Show 2.5 slides
-                spaceBetween: 25,
-              },
-              // Desktop (larger than 1500px)
-              1500: {
-                slidesPerView: 1, // Show 3 full slides
-                spaceBetween: 30,
-              },
+              320: { slidesPerView: 1, spaceBetween: 5 },
+              500: { slidesPerView: 1, spaceBetween: 10 },
+              768: { slidesPerView: 1, spaceBetween: 15 },
+              1024: { slidesPerView: 1, spaceBetween: 20 },
+              1300: { slidesPerView: 1, spaceBetween: 25 },
+              1500: { slidesPerView: 1, spaceBetween: 30 },
             }}
             modules={[Autoplay, Navigation, A11y]}
             className="swiper-wrapper"
           >
             {testimonialsData.map((data) => (
               <SwiperSlide key={data._id}>
-                <div className="border p-10 flex flex-col justify-center items-center text-center rounded-3xl">
-                  <div className="flex justify-center items-center text-secondary">
-                    {/* Rendering stars dynamically based on rating in the array */}
-                    {renderStars(data.stars)}
-                  </div>
-                  <h5 className="uppercase font-semibold mt-4">
-                    {data.feedback}
-                  </h5>
-                  <div className="flex justify-center items-center gap-4 mt-10">
-                    {/* <img
-                      src={data.imageURL}
-                      alt="testimonial-image"
-                      className="w-[60px] h-[60px] rounded-full"
-                    /> */}
-                    <div>
+                <div className="relative group border p-10 flex flex-col justify-center items-center text-center rounded-3xl overflow-hidden">
+                  <div className="absolute inset-0 bg-secondary/10 rounded-3xl scale-0 group-hover:scale-100 transition-transform duration-700 ease-out origin-center"></div>
+                  <div className="relative z-10">
+                    <div className="flex justify-center items-center text-secondary">
+                      {renderStars(data.stars)}
+                    </div>
+                    <h5 className="uppercase font-semibold mt-4">{data.feedback}</h5>
+                    <div className="flex justify-center items-center gap-4 mt-10">
                       <div className="uppercase font-bold text-base text-secondary text-left">
                         {data.personName}
                       </div>
@@ -147,26 +131,31 @@ const Testimonials = () => {
           </Swiper>
         </div>
 
-        {/* Second div spans full width on mobile, half on medium screens, and one-third on large screens */}
+        {/* Testimonials Name List Section */}
         <div className="col-span-1 md:col-span-1 lg:col-span-1 max-sm:mt-10">
-          {/* Content here takes 1/3 of the space on large screens */}
           <h1 className="text-4xl font-bold uppercase">Testimonials</h1>
-
           <p className="text-textClr text-sm mt-5 font-medium">
             In publishing and graphic design, Lorem ipsum is a placeholder text
             commonly used to demonstrate the visual
           </p>
 
-          <ul className="mt-10">
-            {testimonialsData.map((data) => (
-              <li className="uppercase font-semibold text-black flex gap-4 items-center mb-2">
-                <span className="p-1 rounded-full bg-green-400">
-                  <Check size={15} />
-                </span>{" "}
-                {data.personName}
-              </li>
+          {/* Slick Slider for Names */}
+          <Slider {...sliderSettings} ref={slickSliderRef}>
+            {testimonialsData.map((data, index) => (
+              <div key={data._id} className="p-2">
+                <li
+                  className={`uppercase font-semibold text-black flex gap-4 items-center mb-2 transition-all duration-300 ${
+                    activeIndex === index ? "text-primary font-bold scale-125 ml-10" : "text-gray-400"
+                  }`}
+                >
+                  <span className="p-1 rounded-full bg-green-400">
+                    <Check size={15} />
+                  </span>
+                  {data.personName}
+                </li>
+              </div>
             ))}
-          </ul>
+          </Slider>
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 //imports for swiper.js
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -12,6 +12,8 @@ import Head from "next/head";
 
 const HeroSection = () => {
   const date = new Date();
+  const [zoomIn, setZoomIn] = useState(false);
+  const [textLoaded, setTextLoaded] = useState(false);
 
   //upcoming events json data
   const upcomingEvents = [
@@ -38,6 +40,32 @@ const HeroSection = () => {
     },
   ];
 
+  useEffect(() => {
+    // Trigger the zoom-in animation and text animation after component mounts
+    setZoomIn(true);
+    setTextLoaded(true);
+  }, []);
+
+  const text = "English Languages";
+
+  const renderText = () => {
+    return text.split("").map((letter, index) => {
+      // Check if the letter is a space and return a normal space
+      if (letter === " ") {
+        return <span key={index}>&nbsp;</span>;
+      }
+      return (
+        <span
+          key={index}
+          className={`letter letter-appear-${index % 6}`} // Cycle through animation delays
+          style={{ animationDelay: `${index * 0.1}s` }}
+        >
+          {letter}
+        </span>
+      );
+    });
+  };
+
   return (
     <>
       <Head>
@@ -52,12 +80,14 @@ const HeroSection = () => {
                 <span className="text-secondary font-extrabold">X</span>perts
               </h5>
               <h1 className="text-primary font-semibold text-5xl uppercase mt-4">
+                
                 Your Ultimate guide
               </h1>
               <h1 className="text-primary font-semibold text-5xl uppercase mt-1">
                 To{" "}
-                <span className="border-b-4 border-green-500">
-                  English Languages
+                <span className="shining-border border-b-4 border-green-500 -mb-3">
+                  
+                  {textLoaded ? renderText() : text}
                 </span>
               </h1>
 
@@ -73,7 +103,7 @@ const HeroSection = () => {
                 Register Now
               </Link>
 
-              <div>
+              {/* <div>
                 <h5 className="text-base text-primary font-semibold mt-20 lg:pr-64">
                   Our Sponsors:
                   <div>
@@ -86,43 +116,33 @@ const HeroSection = () => {
                         disableOnInteraction: false,
                         pauseOnMouseEnter: true,
                       }}
-                      // navigation
                       pagination={{ clickable: true }}
                       scrollbar={{ draggable: true }}
                       breakpoints={{
-                        // Mobile small (smaller than 500px)
                         320: {
-                          slidesPerView: 2, // 1 slide on very small screens
+                          slidesPerView: 2, 
                           spaceBetween: 5,
                         },
-                        // Mobile medium (around 500px)
                         500: {
                           slidesPerView: 2,
                           spaceBetween: 10,
                         },
-                        // Tablets (around 768px)
                         768: {
-                          slidesPerView: 3.5, // Can show partial next slide
                           spaceBetween: 15,
                         },
-                        // Tablets large (around 1024px)
                         1024: {
-                          slidesPerView: 2.5, // Showing 2 slides
+                          slidesPerView: 2.5, 
                           spaceBetween: 20,
                         },
-                        // Laptops (around 1300px)
                         1300: {
-                          slidesPerView: 2.5, // Show 2.5 slides
+                          slidesPerView: 2.5, 
                           spaceBetween: 20,
                         },
-                        // Desktop (larger than 1500px)
                         1500: {
-                          slidesPerView: 2.5, // Show 3 full slides
+                          slidesPerView: 2.5, 
                           spaceBetween: 20,
                         },
                       }}
-                      // navigation={true}
-                      //  modules={[Autoplay, Pagination, Navigation]}
                       modules={[Autoplay, Navigation, A11y]}
                       className="swiper-wrapper mx-auto mb-4"
                     >
@@ -147,12 +167,19 @@ const HeroSection = () => {
                     </Swiper>
                   </div>
                 </h5>
-              </div>
+              </div> */}
             </div>
           </div>
           <div>
-            <div>
-              <img src="/assets/images/main_element.png" alt="" />
+            <div className="">
+              {/* <img src="/assets/images/main_element.png" alt="" /> */}
+              <img
+                src="/assets/images/main_element.png"
+                alt="Main Element"
+                className={`transition-transform duration-1000 ease-out ${
+                  zoomIn ? "zoom-in" : ""
+                }`}
+              />
               <div className="absolute bottom-0 right-32 max-sm:right-auto bg-primary/50 p-7 rounded-t-2xl flex flex-col text-white w-[320px]">
                 <div className="text-xs uppercase">
                   upcoming event {date.getFullYear()}

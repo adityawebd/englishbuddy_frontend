@@ -4,7 +4,7 @@ import React from "react";
 const tnc = () => {
   return (
     <Layout>
-      <div className="container mx-auto px-10 lg:px-28 md:px-16 sm:px-10">
+      <div className="pt-16 container mx-auto px-10 lg:px-28 md:px-16 sm:px-10">
         <div className=" py-10">
           <div className="flex flex-col justify-center items-center pb-10">
             <div className="text-lg bg-secondary text-white rounded-full px-4 py-1">

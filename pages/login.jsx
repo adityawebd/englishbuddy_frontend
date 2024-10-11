@@ -73,7 +73,7 @@ export default function Login() {
   return (
     <Layout>
       <ToastContainer />
-      <div className="container flex flex-col justify-center items-center py-10">
+      <div className="pt-28 container flex flex-col justify-center items-center py-10">
         <div className="text-lg bg-secondary text-white rounded-full px-4 py-1">
           Login to your Account
         </div>

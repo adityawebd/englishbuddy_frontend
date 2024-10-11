@@ -26,7 +26,7 @@ const OfferBanner = () => {
     <>
       <div className="offerBannerWrapper">
         <Swiper
-          spaceBetween={10}
+          // spaceBetween={10}
           slidesPerView={1.5}
           loop={true}
           autoplay={{
@@ -42,32 +42,32 @@ const OfferBanner = () => {
             // Mobile small (smaller than 500px)
             320: {
               slidesPerView: 1, // 1 slide on very small screens
-              spaceBetween: 5,
+              // spaceBetween: 5,
             },
             // Mobile medium (around 500px)
             500: {
               slidesPerView: 1,
-              spaceBetween: 10,
+              // spaceBetween: 10,
             },
             // Tablets (around 768px)
             768: {
               slidesPerView: 1, // Can show partial next slide
-              spaceBetween: 15,
+              // spaceBetween: 15,
             },
             // Tablets large (around 1024px)
             1024: {
               slidesPerView: 1, // Showing 2 slides
-              spaceBetween: 20,
+              // spaceBetween: 20,
             },
             // Laptops (around 1300px)
             1300: {
               slidesPerView: 1, // Show 2.5 slides
-              spaceBetween: 25,
+              // spaceBetween: 25,
             },
             // Desktop (larger than 1500px)
             1500: {
               slidesPerView: 1, // Show 3 full slides
-              spaceBetween: 30,
+              // spaceBetween: 30,
             },
           }}
           navigation={true}
@@ -82,10 +82,10 @@ const OfferBanner = () => {
                 src={
                   banner.imageURL
                     ? banner.imageURL
-                    : "/assets/offer_banner_default.png"
+                    : "/assets/eng-bud-banner-demo.png"
                 }
                 alt="offer-banner-image"
-                className="w-full lg:h-[400px] md:h-[220px] max-sm:h-[100px]"
+                className="w-full lg:h-[auto] md:h-[auto] max-sm:h-[auto]"
               />
             </SwiperSlide>
           ))}

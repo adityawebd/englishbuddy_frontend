@@ -3,19 +3,19 @@
 @tailwind utilities;
 
 :root {
-    --primary-clr: #09031f;
-    --secondary-clr: #f71d25;
-    --white-clr: #ffffff;
+  --primary-clr: #09031f;
+  --secondary-clr: #f71d25;
+  --white-clr: #ffffff;
 }
 
 .asterik {
-    color: var(--secondary-clr);
+  color: var(--secondary-clr);
 }
 .error-message {
-    /* border: 1px solid red; */
-    color: var(--secondary-clr);
-    font-size: 12px;
-    margin-top: -20px;
+  /* border: 1px solid red; */
+  color: var(--secondary-clr);
+  font-size: 12px;
+  margin-top: -20px;
 }
 
 .our_mentors_bg {
@@ -24,12 +24,166 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+.mentorsIMG {
+  position: relative; /* Needed to establish stacking context */
+  transition: transform 0.7s ease; /* Smooth scaling effect */
+  z-index: 1; /* Default z-index */
+}
+
+.mentorsIMG:hover {
+  transform: scale(1.2) !important;
+  z-index: 0; /* Send the image behind */
+}
+
+.mentorsDESC {
+  position: relative;
+  z-index: 2; /* Ensures it is above the image */
+}
+
+
+.whatappButton {
+  z-index: 999;
+}
+
+/* ---------------------------------
+---------------------------------
+------ HERSECTCION STARTS -------------
+---------------------------------
+--------------------------------- */
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.zoom-in {
+  animation: zoomIn 3s ease-out;
+}
+
+@keyframes revealText {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.letter {
+  display: inline-block;
+  animation: revealText 0.5s ease forwards;
+  opacity: 0;
+}
+
+.letter-appear {
+  animation-delay: 0s;
+}
+
+.letter-appear-1 {
+  animation-delay: 0.05s;
+}
+
+.letter-appear-2 {
+  animation-delay: 0.1s;
+}
+
+.letter-appear-3 {
+  animation-delay: 0.15s;
+}
+
+/* Add more delays as necessary */
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: -100%;
+  }
+}
+
+.shining-border {
+  position: relative;
+  display: inline-block;
+  border-bottom: 4px solid transparent; 
+  padding-bottom: 5px; /* Adjust padding for space between text and border */
+  overflow: hidden; /* Prevents overflow of the animation */
+}
+
+.shining-border::after {
+  content: '';
+  position: absolute;
+  top: 45px;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(90deg, transparent, rgba(0, 255, 0, 0.5), transparent);
+  animation: shine 2s linear infinite; /* Adjust duration and smoothness */
+}
+
+/* ---------------------------------
+---------------------------------
+------ HERSECTCION Ends -------------
+---------------------------------
+--------------------------------- */
+
 
 /* ---------------------------------
 ---------------------------------
 ------ CONTACT PAGE -------------
 ---------------------------------
 --------------------------------- */
+
+.contactFormStyle {
+  background-image: url(/assets/images/contact_bg.png);
+  background-size: cover;
+  background-position: center center;
+  /* border: 1px solid blue; */
+  padding: 100px 130px;
+
+  display: flex;
+  justify-content: end;
+
+}
+.contactFormStyleWrapper {
+  background: var(--white-clr);
+  border-radius: 30px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 50px;
+
+  display: flex;
+  justify-content: end;
+  width: 90%;
+
+  position: relative;
+}
+.contactFormStyleForm {
+  /* border: 1px solid red; */
+  width: 60%;
+}
+.contactFormStyleBookImg {
+  /* border: 1px solid red; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* width: 50%; */
+  /* display: flex; */
+}
+.contactFormStyleBookImg img{
+  /* border: 1px solid green; */
+  width: 770px;
+  border-radius: 30px;
+  margin-left: -150px;
+}
 
 .contact_form {
   display: flex;
@@ -55,10 +209,12 @@
 
 .contact_form form input {
   width: 100%;
-  border-bottom: 2px solid var(--primary-clr);
+  background-color: #ebebeb;
+  /* border-bottom: 2px solid var(--primary-clr); */
+  border-radius: 10px;
   outline: none;
   margin-bottom: 20px;
-  padding: 6px 18px;
+  padding: 10px 20px;
 }
 
 .contact_form form input::placeholder {
@@ -66,20 +222,24 @@
 }
 
 .contact_form form select {
-    width: 100%;
-    border-bottom: 2px solid var(--primary-clr);
-    outline: none;
-    margin-bottom: 20px;
-    padding: 6px 18px;
+  width: 100%;
+  background-color: #ebebeb;
+  /* border-bottom: 2px solid var(--primary-clr); */
+  border-radius: 10px;
+  outline: none;
+  margin-bottom: 20px;
+  padding: 10px 20px;
 }
 
 .contact_form form textarea {
   width: 100%;
+  background-color: #ebebeb;
   height: 100px;
-    border-bottom: 2px solid var(--primary-clr);
+  border-radius: 10px;
+  /* border-bottom: 2px solid var(--primary-clr); */
   outline: none;
   margin-bottom: 20px;
-  padding: 6px 18px;
+  padding: 10px 20px;
 }
 
 .contact_form form textarea::placeholder {
@@ -90,9 +250,9 @@
   background-color: var(--primary-clr);
   border: 2px solid var(--primary-clr);
   color: var(--white-clr);
-  margin-top: 20px;
+  margin-top: 10px;
   padding: 8px 0;
-  border-radius: 4px;
+  border-radius: 30px;
   outline: none;
   text-transform: uppercase;
   transition: 0.6s all;
@@ -103,8 +263,129 @@
   color: var(--primary-clr);
 }
 
-
-
+@media(max-width: 425px) {
+  .contactFormStyle {
+    background-image: url(/assets/images/contact_bg.png);
+    background-size: cover;
+    background-position: center center;
+    /* border: 1px solid blue; */
+    padding: 20px;
+  
+    display: flex;
+    justify-content: end;
+  
+  }
+  .contactFormStyleWrapper {
+    /* border: 1px solid blue; */
+    background: var(--white-clr);
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 50px;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    width: 100%;
+  
+    position: relative;
+  }
+  .contactFormStyleForm {
+    /* border: 1px solid red; */
+    width: 100%;
+  }
+  .contactFormStyleBookImg {
+    /* border: 1px solid red; */
+    position: relative;
+    /* top: 0; */
+    /* left: 0; */
+    /* width: 50%; */
+    /* display: flex; */
+  }
+  .contactFormStyleBookImg img{
+    /* border: 1px solid green; */
+    width: 100%;
+    margin-left: 0;
+  }
+  
+  .contact_form {
+    border: 1px solid green;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .contact_form form {
+    background-color: var(--e-gray);
+    display: flex;
+    flex-direction: column;
+  
+    width: 100%;
+  }
+  
+  .contact_form label {
+    /* border: 1px solid red; */
+    width: 100%;
+    font-size: 15px;
+    color: var(--primary-clr);
+  }
+  
+  .contact_form form input {
+    width: 100%;
+    background-color: #ebebeb;
+    /* border-bottom: 2px solid var(--primary-clr); */
+    border-radius: 10px;
+    outline: none;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+  }
+  
+  .contact_form form input::placeholder {
+    font-size: 13px;
+  }
+  
+  .contact_form form select {
+    width: 100%;
+    background-color: #ebebeb;
+    /* border-bottom: 2px solid var(--primary-clr); */
+    border-radius: 10px;
+    outline: none;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+  }
+  
+  .contact_form form textarea {
+    width: 100%;
+    background-color: #ebebeb;
+    height: 100px;
+    border-radius: 10px;
+    /* border-bottom: 2px solid var(--primary-clr); */
+    outline: none;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+  }
+  
+  .contact_form form textarea::placeholder {
+    font-size: 13px;
+  }
+  
+  .contact_form form button {
+    background-color: var(--primary-clr);
+    border: 2px solid var(--primary-clr);
+    color: var(--white-clr);
+    margin-top: 10px;
+    padding: 8px 0;
+    border-radius: 30px;
+    outline: none;
+    text-transform: uppercase;
+    transition: 0.6s all;
+  }
+  
+  .contact_form form button:hover {
+    background-color: var(--white-clr);
+    color: var(--primary-clr);
+  }
+}
 
 /* ---------------------------------
 ---------------------------------
@@ -112,106 +393,104 @@
 ---------------------------------
 --------------------------------- */
 .blog_content p {
-    font-family: sans-serif;
-    line-height: 1.4;
-    font-size: 16px;
-    font-weight: 400;
-    color: rgb(69, 69, 69);
-  }
-  
-  .blog_content a {
-    color: black;
-    font-size: 20px;
-  }
-  .blog_content a:hover {
-    text-decoration: underline;
-    color: #555;
-  }
-  
-  .blog_content h1 {
-    font-family: sans-serif;
-    line-height: 1.6;
-    font-size: 36px;
-  }
-  .blog_content h2 {
-    font-family: sans-serif;
-    line-height: 1.6;
-    font-size: 30px;
-  }
-  .blog_content h3 {
-    font-family: sans-serif;
-    line-height: 1.6;
-    font-size: 24px;
-  }
-  .blog_content h4 {
-    font-family: sans-serif;
-    line-height: 1.6;
-    font-size: 20px;
-  }
-  
-  .blog_content h5 {
-    font-family: sans-serif;
-    line-height: 1.6;
-    font-size: 18px;
-  }
-  .blog_content h6 {
-    font-family: sans-serif;
-    line-height: 1.6;
-    font-size: 16px;
-  }
-  
-  .blog_content ul {
-    margin-left: 20px;
-  }
-  
-  .blog_content ol {
-    margin-left: 20px;
-  }
-  
-  .blog_content ul li {
-    list-style: disc;
-    font-family: sans-serif;
-    line-height: 1.4;
-    font-size: 16px;
-    font-weight: 400;
-    color: rgb(69, 69, 69);
-  }
-  
-  .blog_content ol li {
-    list-style: disc;
-    font-family: sans-serif;
-    line-height: 1.4;
-    font-size: 16px;
-    font-weight: 400;
-    color: rgb(69, 69, 69);
-  }
-  
-  .blog_content img {
-    border-radius: 4px;
-    width: 100%;
-  }
-  
-  .blog_content iframe {
-    margin-top: 10px;
-    border-radius: 4px;
-    width: 325px;
-  }
-  
+  font-family: sans-serif;
+  line-height: 1.4;
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(69, 69, 69);
+}
 
-  
+.blog_content a {
+  color: black;
+  font-size: 20px;
+}
+.blog_content a:hover {
+  text-decoration: underline;
+  color: #555;
+}
+
+.blog_content h1 {
+  font-family: sans-serif;
+  line-height: 1.6;
+  font-size: 36px;
+}
+.blog_content h2 {
+  font-family: sans-serif;
+  line-height: 1.6;
+  font-size: 30px;
+}
+.blog_content h3 {
+  font-family: sans-serif;
+  line-height: 1.6;
+  font-size: 24px;
+}
+.blog_content h4 {
+  font-family: sans-serif;
+  line-height: 1.6;
+  font-size: 20px;
+}
+
+.blog_content h5 {
+  font-family: sans-serif;
+  line-height: 1.6;
+  font-size: 18px;
+}
+.blog_content h6 {
+  font-family: sans-serif;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.blog_content ul {
+  margin-left: 20px;
+}
+
+.blog_content ol {
+  margin-left: 20px;
+}
+
+.blog_content ul li {
+  list-style: disc;
+  font-family: sans-serif;
+  line-height: 1.4;
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(69, 69, 69);
+}
+
+.blog_content ol li {
+  list-style: disc;
+  font-family: sans-serif;
+  line-height: 1.4;
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(69, 69, 69);
+}
+
+.blog_content img {
+  border-radius: 4px;
+  width: 100%;
+}
+
+.blog_content iframe {
+  margin-top: 10px;
+  border-radius: 4px;
+  width: 325px;
+}
+
 /* ---------------------------------
 ---------------------------------
 ------ OFFER BANNER  -------------
 ---------------------------------
 --------------------------------- */
-  .swiper-button-prev {
-    left: -30px !important;
-    transition: all 0.5s;
-  }
-  .swiper-button-next {
-    right: -30px !important;
-    transition: all 0.5s;
-  }
+.swiper-button-prev {
+  left: -30px !important;
+  transition: all 0.5s;
+}
+.swiper-button-next {
+  right: -30px !important;
+  transition: all 0.5s;
+}
 .swiper-button-prev::after {
   background-color: var(--primary-clr);
   color: var(--white-clr) !important;
@@ -226,24 +505,19 @@
   padding: 10px 12px !important;
 }
 
-.offerBannerWrapper:hover  .swiper-button-prev {
+.offerBannerWrapper:hover .swiper-button-prev {
   left: 30px !important;
 }
 
-.offerBannerWrapper:hover  .swiper-button-next {
+.offerBannerWrapper:hover .swiper-button-next {
   right: 30px !important;
 }
 
-
-
-
-
-
-
+/* 
 
 .shine-box {
   position: relative;
-  border: 2px solid transparent; /* Initialize a transparent border */
+  border: 2px solid transparent;
   border-image: linear-gradient(90deg, transparent 0%, transparent 50%, transparent 100%);
   border-image-slice: 1;
   transition: border-image 0.5s ease-in-out;
@@ -272,8 +546,8 @@
 }
 
 .shine-box:hover::before {
-  background-position: 100% 0; /* Move shine effect on hover */
-}
+  background-position: 100% 0; 
+} */
 
 /* .shine-box {
   position: relative;
@@ -306,9 +580,9 @@
   background-position: 100% 0; 
 } */
 
+/* ----------------------------------------------- */
 /* Main Box and Glow Border */
-.animated-border-box,
-.animated-border-box-glow {
+.animated-border-box {
   /* max-height: 200px; */
   /* max-width: 250px; */
   /* height: 100%; */
@@ -319,15 +593,13 @@
   transition: all 0.3s ease-in-out;
 }
 
-/* Glow Element with Blur */
-.animated-border-box-glow {
+/* Glow Element with Blur * {
   overflow: hidden;
   filter: blur(20px);
 }
 
 /* The animation is applied only on hover now */
-.animated-border-box:hover::before,
-.animated-border-box-glow:hover::before {
+.animated-border-box:hover::before {
   content: "";
   z-index: -2;
   text-align: center;
@@ -339,7 +611,11 @@
   height: 99999px;
   background-repeat: no-repeat;
   background-position: 0 0;
-  background-image: conic-gradient(rgba(0, 0, 0, 0), #1976ed, rgba(0, 0, 0, 0) 25%);
+  background-image: conic-gradient(
+    rgba(0, 0, 0, 0),
+    #f71d25,
+    rgba(0, 0, 0, 0) 25%
+  );
   animation: rotate 4s linear infinite;
 }
 
@@ -352,8 +628,8 @@
   top: 5px;
   width: calc(100% - 10px);
   height: calc(100% - 10px);
-  background: #292a2e;
-  border-radius: 7px;
+  background: var(--primary-clr);
+  border-radius: 10px;
 }
 
 /* Rotation Animation */
@@ -364,3 +640,78 @@
 }
 
 /* Hover Effect Ends */
+
+
+
+
+/* Main Box and Glow Border */
+.animated-border-box-white {
+  /* max-height: 200px; */
+  /* max-width: 250px; */
+  /* height: 100%; */
+  /* width: 100%; */
+  /* position: absolute; */
+  overflow: hidden;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Glow Element with Blur * {
+  overflow: hidden;
+  filter: blur(20px);
+}
+
+/* The animation is applied only on hover now */
+.animated-border-box-white:hover::before {
+  content: "";
+  z-index: -2;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0deg);
+  position: absolute;
+  width: 99999px;
+  height: 99999px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-image: conic-gradient(
+    rgba(0, 0, 0, 0),
+    #f71d25,
+    rgba(0, 0, 0, 0) 25%
+  );
+  animation: rotate 4s linear infinite;
+}
+
+/* Inside Box Styling */
+.animated-border-box-white::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 5px;
+  top: 5px;
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  background: var(--white-clr);
+  border-radius: 40px;
+}
+
+/* Rotation Animation */
+@keyframes rotate {
+  100% {
+    transform: translate(-50%, -50%) rotate(1turn);
+  }
+}
+
+/* Hover Effect Ends */
+
+
+
+/* ---------------------------------
+---------------------------------
+------ LATEST NEWS  -------------
+---------------------------------
+--------------------------------- */
+.latestNewCards .swiper-slide figure {
+  /* border: 1px solid red; */
+  border-radius: 25px;
+}

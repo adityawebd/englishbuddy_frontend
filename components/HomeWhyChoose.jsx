@@ -63,7 +63,7 @@ const HomeWhyChoose = () => {
                 <img
                   src="/assets/images/why_choose_iltes.png"
                   alt=""
-                  className="rounded-tl-2xl h-[100%] w-full max-sm:rounded-none"
+                  className="rounded-l-2xl h-[100%] w-full max-sm:rounded-none"
                 />
               </div>
             </div>

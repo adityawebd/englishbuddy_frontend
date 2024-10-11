@@ -4,7 +4,7 @@ import Layout from "../components/Layout";
 export default function About() {
   return (
     <Layout>
-      <div className="about-page-content">
+      <div className="about-page-content pt-16">
         <div className=" py-10">
           <div className="flex flex-col justify-center items-center">
             <div className="text-lg bg-secondary text-white rounded-full px-4 py-1">

@@ -108,19 +108,19 @@ const ContactForm = () => {
     <>
       <ToastContainer />
       <div className="container flex flex-col justify-center items-center">
-        <h2 className="text-blackClr text-3xl font-bold mb-3">
+        <h2 className="text-blackClr text-3xl font-bold mb-3 max-sm:text-xl max-sm:mt-5">
           Get In Touch With Us!
         </h2>
         <div
-          className="contact_form border p-10 bg-gray-200"
+          className="contact_form p-10 rounded-3xl"
           onSubmit={handleSubmit}
         >
           <form>
             <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4">
               <div className="form-group">
-                <label htmlFor="firstName">
+                {/* <label htmlFor="firstName">
                   First Name<span className="asterik">*</span>
-                </label>
+                </label> */}
                 <input
                   type="text"
                   id="firstName"
@@ -134,7 +134,7 @@ const ContactForm = () => {
                 )}
               </div>
               <div className="form-group">
-                <label htmlFor="lastName">Last Name</label>
+                {/* <label htmlFor="lastName">Last Name</label> */}
                 <input
                   type="text"
                   id="lastName"
@@ -147,9 +147,9 @@ const ContactForm = () => {
 
             <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1  gap-4">
               <div className="form-group">
-                <label htmlFor="email">
+                {/* <label htmlFor="email">
                   Email Address<span className="asterik">*</span>
-                </label>
+                </label> */}
                 <input
                   type="email"
                   id="email"
@@ -163,9 +163,9 @@ const ContactForm = () => {
                 )}
               </div>
               <div className="form-group">
-                <label htmlFor="phone">
+                {/* <label htmlFor="phone">
                   Phone Number<span className="asterik">*</span>
-                </label>
+                </label> */}
                 <input
                   type="number"
                   id="phone"
@@ -182,9 +182,9 @@ const ContactForm = () => {
 
             <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4">
               <div className="form-group">
-                <label htmlFor="country" className="block">
+                {/* <label htmlFor="country" className="block">
                   Desired Country<span className="asterik">*</span>
-                </label>
+                </label> */}
                 <select
                   id="country"
                   value={country}
@@ -206,9 +206,9 @@ const ContactForm = () => {
                 )}
               </div>
               <div className="form-group">
-                <label htmlFor="city" className="block">
+                {/* <label htmlFor="city" className="block">
                   Nearest City<span className="asterik">*</span>
-                </label>
+                </label> */}
                 <select
                   id="city"
                   value={city}
@@ -229,9 +229,9 @@ const ContactForm = () => {
             </div>
 
             <div className="form-group">
-              <label htmlFor="message">
+              {/* <label htmlFor="message">
                 Your Query<span className="asterik">*</span>
-              </label>
+              </label> */}
               <textarea
                 id="message"
                 value={message}

@@ -117,7 +117,7 @@ export default function Blog() {
 
   return (
     <Layout>
-      <div className=" py-10">
+      <div className="pt-28 pb-10">
         <div className="flex flex-col justify-center items-center">
           <div className="text-lg bg-secondary text-white rounded-full px-4 py-1">
             Our Blogs
