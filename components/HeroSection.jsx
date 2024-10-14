@@ -58,7 +58,7 @@ const HeroSection = () => {
         <span
           key={index}
           className={`letter letter-appear-${index % 6}`} // Cycle through animation delays
-          style={{ animationDelay: `${index * 0.1}s` }}
+          style={{ animationDelay: `${index * 0.15}s` }}
         >
           {letter}
         </span>
@@ -79,13 +79,12 @@ const HeroSection = () => {
                 English Prep
                 <span className="text-secondary font-extrabold">X</span>perts
               </h5>
-              <h1 className="text-primary font-semibold text-5xl uppercase mt-4">
-                
+              <h1 className="text-primary font-semibold text-5xl uppercase mt-4  max-sm:text-2xl">
                 Your Ultimate guide
               </h1>
-              <h1 className="text-primary font-semibold text-5xl uppercase mt-1">
+              <h1 className="text-primary font-semibold text-5xl uppercase mt-1 max-sm:text-2xl">
                 To{" "}
-                <span className="shining-border border-b-4 border-green-500 -mb-3">
+                <span className="shining-border border-b-4 border-green-500 -mb-3 max-sm:-mb-4">
                   
                   {textLoaded ? renderText() : text}
                 </span>

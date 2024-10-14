@@ -133,7 +133,7 @@ const Testimonials = () => {
 
         {/* Testimonials Name List Section */}
         <div className="col-span-1 md:col-span-1 lg:col-span-1 max-sm:mt-10">
-          <h1 className="text-4xl font-bold uppercase">Testimonials</h1>
+          <h1 className="text-4xl font-bold uppercase max-sm:text-2xl">Testimonials</h1>
           <p className="text-textClr text-sm mt-5 font-medium">
             In publishing and graphic design, Lorem ipsum is a placeholder text
             commonly used to demonstrate the visual

@@ -41,7 +41,7 @@ const testItems = [
 const Tests = () => {
   return (
     <div className="bg-primary py-20 flex max-sm:flex-col">
-      <div className="h-full w-[10%] border-textClr/20"></div>
+      <div className="h-full lg:w-[10%] border-textClr/20"></div>
 
       <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-24">
         <div className="flex flex-col justify-center items-center">
@@ -53,7 +53,7 @@ const Tests = () => {
             tests
           </div>
           <div
-            className="text-4xl uppercase font-bold mt-4 pb-4 text-white text-center w-[60%] max-sm:text-2xl max-sm:w-[100%]"
+            className="lg:text-4xl uppercase font-bold mt-4 pb-4 text-white text-center w-[60%] md:text-2xl max-sm:text-2xl max-sm:w-[100%]"
             data-aos="fade-up"
             data-aos-duration="700"
           >
@@ -78,37 +78,37 @@ const Tests = () => {
                   />
                   
                   <div className="absolute bottom-0 left-10 bg-primary/60 rounded-t-2xl p-5 flex flex-col justify-center items-center">
-                    <div className="uppercase text-white/80 font-semibold">
+                    <div className="uppercase text-white/80 font-semibold lg:text-base md:text-xs">
                       ticket
                     </div>
-                    <div className="uppercase text-white text-4xl font-bold">
+                    <div className="uppercase text-white font-bold lg:text-4xl md:text-2xl">
                       ₹{test.price}
                     </div>
                   </div>
                 </div>
                 <div className="w-[70%] max-sm:w-full rounded-2xl p-8">
                   <div className="flex justify-between items-center max-sm:flex-col max-sm:items-start">
-                    <div className="flex items-center text-white/70">
+                    <div className="flex items-center text-white/70 lg:text-base md:text-sm">
                       <MapPin size={16} className="text-green" /> &nbsp;
                       {test.location}
                     </div>
                     <div className="flex justify-between items-center gap-4 max-sm:flex-col max-sm:items-start max-sm:mt-5">
-                      <div className="flex items-center text-white/70 border-r border-textClr pr-5 max-sm:border-0">
+                      <div className="flex items-center text-white/70 border-r border-textClr pr-5 max-sm:border-0  lg:text-base md:text-sm">
                         <CalendarDays size={16} className="text-green" /> &nbsp;
                         {test.date}
                       </div>
-                      <div className="flex items-center text-white/70">
+                      <div className="flex items-center text-white/70  lg:text-base md:text-sm">
                         <Timer size={16} className="text-green" /> &nbsp;
                         {test.time}
                       </div>
                     </div>
                   </div>
 
-                  <h2 className="text-2xl text-white font-bold uppercase mt-5">
+                  <h2 className="lg:text-2xl md:text-lg text-white font-bold uppercase mt-5">
                     {test.title}
                   </h2>
 
-                  <p className="text-white/70 mt-4">{test.description}</p>
+                  <p className="text-white/70 mt-4 lg:text-base md:text-xs">{test.description}</p>
 
                   <div className="mt-10 flex gap-4 items-center">
                     <Link
@@ -134,7 +134,7 @@ const Tests = () => {
         </div>
       </div>
 
-      {/* <div className="h-full w-[10%] border-textClr/20"></div> */}
+      <div className="h-full lg:w-[10%] border-textClr/20"></div>
     </div>
   );
 };

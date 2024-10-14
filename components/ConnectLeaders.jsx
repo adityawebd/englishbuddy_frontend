@@ -12,7 +12,7 @@ const ConnectLeaders = () => {
             className="w-full h-[auto] max-sm:h-[auto]"
           />
 
-          <div className="absolute bottom-0 left-[10%] bg-primary/30 rounded-t-3xl p-10 w-[600px] max-sm:w-[auto] max-sm:relative max-sm:left-[auto] max-sm:rounded-b-3xl max-sm:rounded-none" data-aos="zoom-in-up" data-aos-duration="900">
+          <div className="lg:absolute lg:bottom-0 lg:left-[10%] bg-primary/30 lg:rounded-t-3xl lg:rounded-b-none p-10 lg:w-[600px] max-sm:w-[auto] md:w-[auto] max-sm:relative md:relative max-sm:left-[auto] md:left-[auto] max-sm:rounded-b-3xl md:rounded-b-3xl max-sm:rounded-none md:rounded-none" data-aos="zoom-in-up" data-aos-duration="900">
             <h2 className="text-4xl text-white font-bold uppercase max-sm:text-2xl" data-aos="fade-up" data-aos-duration="500">
               connect with industry leaders - Get Started!
             </h2>

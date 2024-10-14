@@ -32,7 +32,7 @@ export default function About() {
             </div>
 
             <div className="contact_us_card_wrapper flex justify-center items-center flex-wrap my-5">
-              <div className="bg-primary rounded-2xl p-10 w-[400px] h-[260px] max-sm:w-[100%] max-sm:h-[auto] mx-3 my-3 ">
+              {/* <div className="bg-primary rounded-2xl p-10 w-[400px] h-[260px] max-sm:w-[100%] max-sm:h-[auto] mx-3 my-3 ">
                 <span className="text-secondary">
                   <Headset size={30} />
                 </span>
@@ -47,8 +47,8 @@ export default function About() {
                   <span className="text-white/70">Amritsar:</span> +91
                   7888825151
                 </a>
-              </div>
-              <div className="bg-primary rounded-2xl p-10 w-[400px] h-[260px] max-sm:w-[100%] max-sm:h-[auto] mx-3 my-3">
+              </div> */}
+              <div className="bg-primary rounded-2xl p-10 w-[400px] h-[200px] max-sm:w-[100%] max-sm:h-[auto] mx-3 my-3">
                 <span className="text-secondary">
                   <Mail size={30} />
                 </span>
@@ -59,7 +59,7 @@ export default function About() {
                   info@englishbuddy.co.in
                 </a>
               </div>
-              <div className="bg-primary rounded-2xl p-10 w-[400px] h-[260px] max-sm:w-[100%] max-sm:h-[auto] mx-3 my-3">
+              {/* <div className="bg-primary rounded-2xl p-10 w-[400px] h-[260px] max-sm:w-[100%] max-sm:h-[auto] mx-3 my-3">
                 <span className="text-secondary">
                   <MapPin size={30} />
                 </span>
@@ -78,7 +78,7 @@ export default function About() {
                     Sector-5, Aggarwal Tower MLU Plaza, Dwarka New Delhi-110075
                   </span>
                 </a>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

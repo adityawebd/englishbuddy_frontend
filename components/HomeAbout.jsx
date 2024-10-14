@@ -17,7 +17,7 @@ const HomeAbout = () => {
               about us
             </div>
             <div
-              className="text-4xl uppercase font-bold mt-2 pb-4"
+              className="text-4xl uppercase font-bold mt-2 pb-4 max-sm:text-2xl"
               data-aos="fade-up"
               data-aos-duration="700"
             >

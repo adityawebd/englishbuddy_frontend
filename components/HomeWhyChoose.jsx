@@ -11,14 +11,14 @@ const HomeWhyChoose = () => {
         why choose us
       </div>
       <div
-        className="text-4xl uppercase font-bold mt-2 pb-4 text-center"
+        className="text-4xl uppercase font-bold mt-2 pb-4 text-center max-sm:text-2xl"
         data-aos="fade-up"
         data-aos-duration="700"
       >
         For itels coaching
       </div>
 
-      <div className="relative mt-10">
+      <div className="relative mt-10 max-sm:mt-0">
         <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-1 pt-10">
           <div>
             <div className="bg-primary container mx-auto px-4 sm:px-6 md:px-8 lg:px-24 relative pt-48 max-sm:pt-10">
@@ -57,9 +57,10 @@ const HomeWhyChoose = () => {
               </div>
             </div>
           </div>
+
           <div>
             <div className="relative">
-              <div className="absolute -top-10 h-[570px] w-full max-sm:top-0 max-sm:h-auto">
+              <div className="lg:absolute md:relative max-sm:absolute lg:-top-10 md:top-0 lg:h-[570px] md:h-[auto] w-full max-sm:top-0 max-sm:h-[auto]">
                 <img
                   src="/assets/images/why_choose_iltes.png"
                   alt=""

@@ -40,7 +40,6 @@
   z-index: 2; /* Ensures it is above the image */
 }
 
-
 .whatappButton {
   z-index: 999;
 }
@@ -114,19 +113,24 @@
 .shining-border {
   position: relative;
   display: inline-block;
-  border-bottom: 4px solid transparent; 
+  border-bottom: 4px solid transparent;
   padding-bottom: 5px; /* Adjust padding for space between text and border */
   overflow: hidden; /* Prevents overflow of the animation */
 }
 
 .shining-border::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 45px;
   left: -100%;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(90deg, transparent, rgba(0, 255, 0, 0.5), transparent);
+  background-image: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 255, 0, 0.5),
+    transparent
+  );
   animation: shine 2s linear infinite; /* Adjust duration and smoothness */
 }
 
@@ -135,7 +139,6 @@
 ------ HERSECTCION Ends -------------
 ---------------------------------
 --------------------------------- */
-
 
 /* ---------------------------------
 ---------------------------------
@@ -152,7 +155,6 @@
 
   display: flex;
   justify-content: end;
-
 }
 .contactFormStyleWrapper {
   background: var(--white-clr);
@@ -178,7 +180,7 @@
   /* width: 50%; */
   /* display: flex; */
 }
-.contactFormStyleBookImg img{
+.contactFormStyleBookImg img {
   /* border: 1px solid green; */
   width: 770px;
   border-radius: 30px;
@@ -263,31 +265,16 @@
   color: var(--primary-clr);
 }
 
-@media(max-width: 425px) {
+@media (max-width: 425px) {
   .contactFormStyle {
-    background-image: url(/assets/images/contact_bg.png);
-    background-size: cover;
-    background-position: center center;
     /* border: 1px solid blue; */
     padding: 20px;
-  
-    display: flex;
-    justify-content: end;
-  
   }
   .contactFormStyleWrapper {
     /* border: 1px solid blue; */
-    background: var(--white-clr);
-    border-radius: 30px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    padding: 50px;
-  
-    display: flex;
+    padding: 10px;
     flex-direction: column;
-    justify-content: end;
     width: 100%;
-  
-    position: relative;
   }
   .contactFormStyleForm {
     /* border: 1px solid red; */
@@ -296,94 +283,95 @@
   .contactFormStyleBookImg {
     /* border: 1px solid red; */
     position: relative;
-    /* top: 0; */
-    /* left: 0; */
-    /* width: 50%; */
-    /* display: flex; */
   }
-  .contactFormStyleBookImg img{
+  .contactFormStyleBookImg img {
     /* border: 1px solid green; */
     width: 100%;
     margin-left: 0;
   }
-  
-  .contact_form {
-    border: 1px solid green;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+}
+@media (min-width: 426px) and (max-width: 768px) {
+  .contactFormStyle {
+    /* border: 1px solid blue; */
+    padding: 20px;
   }
-  
-  .contact_form form {
-    background-color: var(--e-gray);
-    display: flex;
+  .contactFormStyleWrapper {
+    /* border: 1px solid blue; */
+    padding: 10px;
     flex-direction: column;
-  
     width: 100%;
   }
-  
-  .contact_form label {
+  .contactFormStyleForm {
     /* border: 1px solid red; */
     width: 100%;
-    font-size: 15px;
-    color: var(--primary-clr);
   }
-  
-  .contact_form form input {
+  .contactFormStyleBookImg {
+    /* border: 1px solid red; */
+    position: relative;
+  }
+  .contactFormStyleBookImg img {
+    /* border: 1px solid green; */
     width: 100%;
-    background-color: #ebebeb;
-    /* border-bottom: 2px solid var(--primary-clr); */
-    border-radius: 10px;
-    outline: none;
-    margin-bottom: 20px;
-    padding: 10px 20px;
+    margin-left: 0;
   }
-  
-  .contact_form form input::placeholder {
-    font-size: 13px;
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .contactFormStyle {
+    padding: 100px 50px;
   }
-  
-  .contact_form form select {
-    width: 100%;
-    background-color: #ebebeb;
-    /* border-bottom: 2px solid var(--primary-clr); */
-    border-radius: 10px;
-    outline: none;
-    margin-bottom: 20px;
-    padding: 10px 20px;
+  .contactFormStyleWrapper {
+    padding: 30px;
+    width: 90%;
+
+    position: relative;
   }
-  
-  .contact_form form textarea {
-    width: 100%;
-    background-color: #ebebeb;
-    height: 100px;
-    border-radius: 10px;
-    /* border-bottom: 2px solid var(--primary-clr); */
-    outline: none;
-    margin-bottom: 20px;
-    padding: 10px 20px;
+  .contactFormStyleForm {
+    /* border: 1px solid red; */
+    width: 60%;
   }
-  
-  .contact_form form textarea::placeholder {
-    font-size: 13px;
+  .contactFormStyleBookImg {
+    /* border: 1px solid red; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* width: 50%; */
+    /* display: flex; */
   }
-  
-  .contact_form form button {
-    background-color: var(--primary-clr);
-    border: 2px solid var(--primary-clr);
-    color: var(--white-clr);
-    margin-top: 10px;
-    padding: 8px 0;
-    border-radius: 30px;
-    outline: none;
-    text-transform: uppercase;
-    transition: 0.6s all;
+  .contactFormStyleBookImg img {
+    /* border: 1px solid green; */
+    width: 600px;
+    margin-left: -140px;
+    margin-top: 40px;
   }
-  
-  .contact_form form button:hover {
-    background-color: var(--white-clr);
-    color: var(--primary-clr);
+}
+@media (min-width: 1025px) and (max-width: 1250px) {
+  .contactFormStyle {
+    padding: 100px 50px;
+  }
+  .contactFormStyleWrapper {
+    padding: 30px;
+    width: 90%;
+
+    position: relative;
+  }
+  .contactFormStyleForm {
+    /* border: 1px solid red; */
+    width: 60%;
+  }
+  .contactFormStyleBookImg {
+    /* border: 1px solid red; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* width: 50%; */
+    /* display: flex; */
+  }
+  .contactFormStyleBookImg img {
+    /* border: 1px solid green; */
+    width: 700px;
+    margin-left: -140px;
+    /* margin-top: 40px; */
   }
 }
 
@@ -641,9 +629,6 @@
 
 /* Hover Effect Ends */
 
-
-
-
 /* Main Box and Glow Border */
 .animated-border-box-white {
   /* max-height: 200px; */
@@ -704,8 +689,6 @@
 
 /* Hover Effect Ends */
 
-
-
 /* ---------------------------------
 ---------------------------------
 ------ LATEST NEWS  -------------
@@ -714,4 +697,138 @@
 .latestNewCards .swiper-slide figure {
   /* border: 1px solid red; */
   border-radius: 25px;
+}
+
+
+
+
+
+/* ---------------------------------
+---------------------------------
+------ All BLOGS PAGE   -------------
+---------------------------------
+--------------------------------- */
+
+:root {
+  --step--1: clamp(0.75rem, 0.7503rem + -0.0003vw, 0.7502rem);
+  --step-0: clamp(1rem, 0.9565rem + 0.2174vw, 1.125rem);
+  --step-1: clamp(1.333rem, 1.2097rem + 0.6165vw, 1.6875rem);
+  --step-2: clamp(1.7769rem, 1.5145rem + 1.3119vw, 2.5313rem);
+
+  --1: oklch(100% 0.006 95);
+  --2: oklch(90% 0.006 95);
+  --3: oklch(60% 0.006 95);
+  --4: oklch(25% 0.006 95);
+  --5: oklch(16% 0.006 95);
+
+  --shadow-color: 48deg 8% 20%;
+  --shadow-elevation-low: 0px 0.2px 0.2px hsl(var(--shadow-color) / 0.39),
+    0px 1px 1.2px -1.9px hsl(var(--shadow-color) / 0.51);
+  --shadow-elevation-medium: 0px 0.2px 0.2px hsl(var(--shadow-color) / 0.36),
+    0px 1.3px 1.6px -0.9px hsl(var(--shadow-color) / 0.44),
+    0.1px 4.8px 5.8px -1.9px hsl(var(--shadow-color) / 0.51);
+  --shadow-elevation-high: 0px 0.2px 0.2px hsl(var(--shadow-color) / 0.4),
+    0px 2.7px 3.3px -0.5px hsl(var(--shadow-color) / 0.45),
+    0.1px 5.9px 7.2px -0.9px hsl(var(--shadow-color) / 0.51),
+    0.2px 12.2px 14.8px -1.4px hsl(var(--shadow-color) / 0.56),
+    0.3px 23.7px 28.8px -1.9px hsl(var(--shadow-color) / 0.61);
+
+  --shelf: url("/assets/book_shelf.png"),
+    linear-gradient(
+      0deg,
+      rgba(72, 70, 58, 1) 0%,
+      rgba(82, 80, 78, 1) 25%,
+      rgba(62, 60, 58, 1) 100%
+    );
+  /* --back: url("https://img.freepik.com/free-photo/frame-wall_1048-1771.jpg?t=st=1728892702~exp=1728896302~hmac=460ddb4b19d76f14e0f9289315de4cfea166b3958ffb7fbba2e32fc26da8bf6e&w=1060"), */
+  --back: url("/assets/wooden2.png"),
+    linear-gradient(
+      0deg,
+      rgba(72, 70, 68, 1) 0%,
+      rgba(112, 110, 108, 1) 25%,
+      rgba(112, 110, 108, 1) 75%,
+      rgba(52, 50, 48, 1) 100%
+    );
+}
+
+
+.bookcase img,
+.bookcase picture,
+.bookcase video,
+.bookcase canvas,
+.bookcase svg {
+  display: block;
+  max-width: 100%;
+}
+
+.bookcase {
+  /* border: 1px solid red; */
+  margin-top: 20px;
+
+  justify-self: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  border: 24px solid #fff9f7;
+  border-bottom: 0px;
+  padding: 0px 0px;
+  max-width: 100%;
+}
+
+.bookcase .bookwrap {
+  height: clamp(350px, 40vh, 500px);
+  width: clamp(200px, 20vw, 300px);
+  border-bottom: 24px solid #fff9f7;
+  background-image: var(--back);
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0px;
+  margin: 0px;
+  perspective: 800px;
+  perspective-origin: left center;
+}
+
+.bookcase .bookwrap::after {
+  content: "";
+  height: 48px;
+  width: 100%;
+  background-image: var(--shelf);
+}
+
+.bookcase .book {
+  width: 150px;
+  min-height: 150px;
+  background: var(--5);
+  position: relative;
+  bottom: -24px;
+  margin: 0px;
+  box-shadow: var(--shadow-elevation-medium);
+  transition: all 0.2s ease-in-out;
+}
+.bookcase .book {
+  width: 200px; /* Set a consistent width */
+  height: 250px; /* Define a consistent height for all books */
+  background: var(--5);
+  position: relative;
+  /* bottom: 16px; */
+  margin: 0px;
+  box-shadow: var(--shadow-elevation-medium);
+  transition: all 0.2s ease-in-out;
+}
+
+.bookcase .book:hover {
+  box-shadow: var(--shadow-elevation-high);
+  transform: rotateX(0deg) rotateY(-20deg) scale(1.08);
+  transform-style: preserve-3d;
+}
+
+.bookcase .book img {
+  height: 100%; /* Ensure the image fills the book height */
+  width: 100%; /* Ensure the image fills the book width */
+  /* object-fit: cover; Crop images to fit uniformly within the book */
+  border: 1px solid var(--5);
 }

@@ -46,7 +46,7 @@ const OurMentors = () => {
           OUR
         </div>
         <div
-          className="text-4xl uppercase font-bold mt-2 pb-4 text-center"
+          className="text-4xl uppercase font-bold mt-2 pb-4 text-center max-sm:text-2xl"
           data-aos="fade-up"
           data-aos-duration="700"
         >
@@ -54,14 +54,14 @@ const OurMentors = () => {
         </div>
 
         <div className="container relative mx-auto px-4 sm:px-6 md:px-8 lg:px-24">
-          <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-3 py-10 mt-20 gap-10">
+          <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 py-10 mt-20 gap-10">
             {mentors.map((mentor, index) => (
               <div key={index} className="">
                 <div className="bg-primary/20 p-5 rounded-2xl mx-10 mb-24 hover:border" data-aos="zoom-in">
                   <img
                     src={mentor.image}
                     alt={mentor.name}
-                    className="h-[300px] rounded-t-2xl -mt-20 mentorsIMG"
+                    className="lg:h-[300px] md:-h-[auto] rounded-t-2xl -mt-20 mentorsIMG max-sm:h-[auto]"
                     data-aos="fade-up"
                     data-aos-duration="800"
                   />

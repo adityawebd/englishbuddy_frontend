@@ -46,10 +46,10 @@ const LatestNews = () => {
   return (
     <>
       <div className="container relative my-10 py-10 mx-auto px-4 sm:px-6 md:px-8 lg:px-24">
-        <div className="text-4xl uppercase font-bold mt-2 pb-4 text-center">
+        <div className="text-4xl uppercase font-bold mt-2 pb-4 text-center max-sm:text-2xl">
           latest news & updates
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-1 py-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-1 pb-10">
           <div></div>
         </div>
 

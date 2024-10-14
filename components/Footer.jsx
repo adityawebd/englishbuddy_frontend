@@ -17,7 +17,7 @@ const Footer = () => {
                 alt="footer-logo"
                 className="w-[50%] max-sm:w-full"
               />
-              <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-1 ">
+              {/* <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-1 ">
                 <div className="">
                   <h3 className="text-secondary uppercase text-lg">
                     NEW DELHI
@@ -34,7 +34,7 @@ const Footer = () => {
                     Complex, Ranjit Avenue, B-Block Amritsar-143001
                   </p>
                 </div>
-              </div>
+              </div> */}
             </div>
             <div className=" p-10 max-sm:p-0 max-sm:pt-10">
               <h3 className="text-white uppercase text-xl font-semibold">
@@ -207,7 +207,7 @@ const Footer = () => {
                   </Link>
                 </div>
               </div>
-              <div className="mt-5 flex gap-4">
+              {/* <div className="mt-5 flex gap-4">
                 <div className="text-green-400 bg-white/30 p-2 px-3 rounded-lg flex justify-center items-center">
                   {" "}
                   <IoCall />{" "}
@@ -218,7 +218,7 @@ const Footer = () => {
                     +91-9625004114
                   </Link>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
 
