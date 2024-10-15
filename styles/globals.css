@@ -24,6 +24,44 @@
   box-shadow: -1px -8px 21px -4px rgba(245,30,30,0.31);
 }
 
+/* --------- navbar css for specific width --------------------- */
+@media(min-width: 1024px) and (max-width: 1300px) {
+  .responsive_css_logo {
+    width: 150px;
+  }
+  .responsive_css_ul {
+    margin-left: 20px;
+  }
+  .responsive_css {
+    font-size: 12px;
+  }
+  .responsive_css_buttonDiv a {
+    padding: 5px !important;
+  }
+  .responsive_css_buttonDiv a span {
+    display: none;
+  }
+} 
+
+/* ------------------------ ipad hersosection --------------- */
+@media(min-width: 1024px) and (max-width: 1280px) {
+  .ipad_responsive {
+    font-size: 32px;
+  }
+  .ipad_responsive_heroPara {
+    padding-right: 20px !important;
+  }
+  .ipad_homeAboutIMG {
+    width: 350px;
+  }
+
+  .lg\:grid-cols-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+}
+
+
+
 .our_mentors_bg {
   background: url("../public/assets/images/main_element.png");
   background-position: center center;
@@ -379,6 +417,100 @@
     margin-left: -140px;
     /* margin-top: 40px; */
   }
+}
+
+
+
+
+/* ---------------------------------
+---------------------------------
+------ LOGIN PAGE -------------
+---------------------------------
+--------------------------------- */
+.login_page_bg {
+  /* border: 1px solid red; */
+  padding: 20px 0;
+  background-image: url('/assets/images/contact_bg.png');
+  background-position: center center;
+  background-size: cover;
+}
+
+.login_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login_form form {
+  background-color: var(--e-gray);
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+}
+
+.login_form label {
+  /* border: 1px solid red; */
+  width: 100%;
+  font-size: 15px;
+  color: var(--primary-clr);
+}
+
+.login_form form input {
+  width: 100%;
+  background-color: #ebebeb;
+  /* border-bottom: 2px solid var(--primary-clr); */
+  border-radius: 10px;
+  outline: none;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+}
+
+.login_form form input::placeholder {
+  font-size: 13px;
+}
+
+.login_form form select {
+  width: 100%;
+  background-color: #ebebeb;
+  /* border-bottom: 2px solid var(--primary-clr); */
+  border-radius: 10px;
+  outline: none;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+}
+
+.login_form form textarea {
+  width: 100%;
+  background-color: #ebebeb;
+  height: 100px;
+  border-radius: 10px;
+  /* border-bottom: 2px solid var(--primary-clr); */
+  outline: none;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+}
+
+.login_form form textarea::placeholder {
+  font-size: 13px;
+}
+
+.login_form form button {
+  background-color: var(--primary-clr);
+  border: 2px solid var(--primary-clr);
+  color: var(--white-clr);
+  margin-top: 10px;
+  padding: 8px 0;
+  border-radius: 30px;
+  outline: none;
+  text-transform: uppercase;
+  transition: 0.6s all;
+}
+
+.login_form form button:hover {
+  background-color: var(--white-clr);
+  color: var(--primary-clr);
 }
 
 /* ---------------------------------

@@ -287,375 +287,385 @@ export default function SignUp() {
   return (
     <Layout>
       <ToastContainer />
-      <div className="pt-28 container flex flex-col justify-center items-center py-10">
-        <div className="text-lg bg-secondary text-white rounded-full px-4 py-1">
-          Signup
-        </div>
-        <h2 className="text-blackClr text-3xl font-bold mb-3">As a Tutor</h2>
-
-        <div className="contact_form border p-10 bg-gray-200">
-          {/* Checkbox selection for form type */}
-          <div className="mb-5 bg-primary/20 rounded-full px-4 py-2 max-sm:rounded-lg">
-            <label className="mr-4 max-sm:block ">
-              <input
-                type="radio"
-                name="formType"
-                value="individual"
-                onChange={() => setSelectedForm("individual")}
-                checked={selectedForm === "individual"}
-              />{" "}
-              <span>I am an Individual</span>
-            </label>
-            <label>
-              <input
-                type="radio"
-                name="formType"
-                value="institute"
-                onChange={() => setSelectedForm("institute")}
-                checked={selectedForm === "institute"}
-              />{" "}
-              I run an Institute
-            </label>
-          </div>
-
-          <form onSubmit={handleSubmit}>
-            {/* Render the individual tutor form only when selected */}
-            {selectedForm === "individual" && (
-              <div className="individualTutor">
-                <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4">
-                  <div className="form-group">
-                    <label htmlFor="fullname">
-                      Full Name<span className="asterisk">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      id="fullname"
-                      value={fullname}
-                      onChange={(e) => setFullName(e.target.value)}
-                      placeholder="Enter your full name (e.g. Aditya Raj)"
-                      required
-                    />
-                    {errors.fullname && (
-                      <p className="error-message">{errors.fullname}</p>
-                    )}
-                  </div>
-
-                  <div className="form-group">
-                    <label htmlFor="indiEmail">
-                      Email Address<span className="asterisk">*</span>
-                    </label>
-                    <input
-                      type="email"
-                      id="indiEmail"
-                      value={indiEmail}
-                      onChange={(e) => setIndiEmail(e.target.value)}
-                      placeholder="Enter your email (e.g. aditya@gmail.com)"
-                      required
-                    />
-                    {errors.indiEmail && (
-                      <p className="error-message">{errors.indiEmail}</p>
-                    )}
-                  </div>
-                </div>
-
-                <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4">
-                  <div className="form-group">
-                    <label htmlFor="indiPhone">
-                      Phone Number<span className="asterisk">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      id="indiPhone"
-                      value={indiPhone}
-                      onChange={(e) => setIndiPhone(e.target.value)}
-                      placeholder="Enter your phone number"
-                      required
-                    />
-                    {errors.indiPhone && (
-                      <p className="error-message">{errors.indiPhone}</p>
-                    )}
-                  </div>
-
-                  <div className="form-group">
-                    <label htmlFor="gender" className="block">
-                      Gender<span className="asterisk">*</span>
-                    </label>
-                    <select
-                      id="gender"
-                      value={gender}
-                      onChange={(e) => setGender(e.target.value)}
-                      required
-                    >
-                      <option value="">Select Gender</option>
-                      <option value="Male">Male</option>
-                      <option value="Female">Female</option>
-                      <option value="Other">Other</option>
-                    </select>
-                    {errors.gender && (
-                      <p className="error-message">{errors.gender}</p>
-                    )}
-                  </div>
-                </div>
-
-                <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4">
-                  <div className="form-group relative">
-                    <label htmlFor="indiPassword">
-                      Password<span className="asterisk">*</span>
-                    </label>
-                    <input
-                      type={showPassword ? "text" : "password"}
-                      id="indiPassword"
-                      value={indiPassword}
-                      onChange={(e) => setIndiPassword(e.target.value)}
-                      placeholder="********"
-                      required
-                    />
-                    {/* Toggle password visibility */}
-                    <span
-                      className="absolute right-2 top-9 cursor-pointer"
-                      onClick={togglePasswordVisibility}
-                    >
-                      {showPassword ? <FaEyeSlash /> : <FaEye />}
-                    </span>
-                    {errors.indiPassword && (
-                      <p className="error-message">{errors.indiPassword}</p>
-                    )}
-                  </div>
-
-                  <div className="form-group relative">
-                    <label htmlFor="indiConfirmPassword">
-                      Confirm Password<span className="asterisk">*</span>
-                    </label>
-                    <input
-                      type={showConfirmPassword ? "text" : "password"}
-                      id="indiConfirmPassword"
-                      value={indiConfirmPassword}
-                      onChange={(e) => setIndiConfirmPassword(e.target.value)}
-                      placeholder="********"
-                      required
-                    />
-                    {/* Toggle password visibility */}
-                    <span
-                      className="absolute right-2 top-9 cursor-pointer"
-                      onClick={toggleConfirmPasswordVisibility}
-                    >
-                      {showConfirmPassword ? <FaEyeSlash /> : <FaEye />}
-                    </span>
-                    {errors.indiConfirmPassword && (
-                      <p className="error-message">
-                        {errors.indiConfirmPassword}
-                      </p>
-                    )}
-                  </div>
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="indipincode">
-                    Pincode/Locality<span className="asterik">*</span>
-                  </label>
-                  <input
-                    id="indipincode"
-                    value={indipincode}
-                    onChange={(e) => setIndiPincode(e.target.value)}
-                    placeholder="Enter pincode or locaity (e.g. 560076 or Netaji Subash Place)"
-                    required
-                  />
-                  {errors.indipincode && (
-                    <p className="error-message">{errors.indipincode}</p>
-                  )}
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="indicategory">
-                    Main Categories<span className="asterik">*</span>
-                  </label>
-                  <textarea
-                    id="indicategory"
-                    value={indicategory}
-                    onChange={(e) => setIndiCategory(e.target.value)}
-                    placeholder="Enter main category you teach, more could be added later"
-                    required
-                  />
-                  {errors.indicategory && (
-                    <p className="error-message">{errors.indicategory}</p>
-                  )}
-                </div>
-              </div>
-            )}
-
-            {/* Render the institute tutor form only when selected */}
-            {selectedForm === "institute" && (
-              <div className="instituteTutor">
-                <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4">
-                  <div className="form-group">
-                    <label htmlFor="instituteName">
-                      Institute Name<span className="asterisk">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      id="instituteName"
-                      value={instituteName}
-                      onChange={(e) => setInstituteName(e.target.value)}
-                      placeholder="Enter institute name (e.g. T.I.M.E)"
-                      required
-                    />
-                    {errors.instituteName && (
-                      <p className="error-message">{errors.instituteName}</p>
-                    )}
-                  </div>
-
-                  <div className="form-group">
-                    <label htmlFor="ownerName">
-                      Owner Name<span className="asterisk">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      id="ownerName"
-                      value={ownerName}
-                      onChange={(e) => setInstituteOwnerName(e.target.value)}
-                      placeholder="Owner or contact person's name"
-                      required
-                    />
-                    {errors.ownerName && (
-                      <p className="error-message">{errors.ownerName}</p>
-                    )}
-                  </div>
-                </div>
-
-                <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4">
-                  <div className="form-group">
-                    <label htmlFor="instituteEmail">
-                      Email Address<span className="asterisk">*</span>
-                    </label>
-                    <input
-                      type="email"
-                      id="instituteEmail"
-                      value={instituteEmail}
-                      onChange={(e) => setInstituteEmail(e.target.value)}
-                      placeholder="Enter institue email (e.g. time@gmail.com)"
-                      required
-                    />
-                    {errors.instituteEmail && (
-                      <p className="error-message">{errors.instituteEmail}</p>
-                    )}
-                  </div>
-
-                  <div className="form-group">
-                    <label htmlFor="instituePhone">
-                      Phone Number<span className="asterisk">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      id="instituePhone"
-                      value={instituePhone}
-                      onChange={(e) => setInstituePhone(e.target.value)}
-                      placeholder="Enter institute phone number"
-                      required
-                    />
-                    {errors.instituePhone && (
-                      <p className="error-message">{errors.instituePhone}</p>
-                    )}
-                  </div>
-                </div>
-
-                <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4">
-                  <div className="form-group relative">
-                    <label htmlFor="institutePassword">
-                      Password<span className="asterisk">*</span>
-                    </label>
-                    <input
-                      type={showPassword2 ? "text" : "password"}
-                      id="institutePassword"
-                      value={institutePassword}
-                      onChange={(e) => setInstitutePassword(e.target.value)}
-                      placeholder="********"
-                      required
-                    />
-                    {/* Toggle password visibility */}
-                    <span
-                      className="absolute right-2 top-9 cursor-pointer"
-                      onClick={togglePasswordVisibility2}
-                    >
-                      {showPassword2 ? <FaEyeSlash /> : <FaEye />}
-                    </span>
-                    {errors.institutePassword && (
-                      <p className="error-message">
-                        {errors.institutePassword}
-                      </p>
-                    )}
-                  </div>
-
-                  <div className="form-group relative">
-                    <label htmlFor="instituteConfirmPassword">
-                      Confirm Password<span className="asterisk">*</span>
-                    </label>
-                    <input
-                      type={showConfirmPassword2 ? "text" : "password"}
-                      id="instituteConfirmPassword"
-                      value={instituteConfirmPassword}
-                      onChange={(e) =>
-                        setInstituteConfirmPassword(e.target.value)
-                      }
-                      placeholder="********"
-                      required
-                    />
-                    {/* Toggle password visibility */}
-                    <span
-                      className="absolute right-2 top-9 cursor-pointer"
-                      onClick={toggleConfirmPasswordVisibility2}
-                    >
-                      {showConfirmPassword2 ? <FaEyeSlash /> : <FaEye />}
-                    </span>
-                    {errors.instituteConfirmPassword && (
-                      <p className="error-message">
-                        {errors.instituteConfirmPassword}
-                      </p>
-                    )}
-                  </div>
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="instituePincode">
-                    Pincode/Locality<span className="asterik">*</span>
-                  </label>
-                  <input
-                    id="instituePincode"
-                    value={instituePincode}
-                    onChange={(e) => setInstituePincode(e.target.value)}
-                    placeholder="Enter pincode or locaity (e.g. 560076 or Netaji Subash Place)"
-                    required
-                  />
-                  {errors.instituePincode && (
-                    <p className="error-message">{errors.instituePincode}</p>
-                  )}
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="instituteCategory">
-                    Main Categories<span className="asterik">*</span>
-                  </label>
-                  <textarea
-                    id="instituteCategory"
-                    value={instituteCategory}
-                    onChange={(e) => setInstituteCategory(e.target.value)}
-                    placeholder="Enter main category you teach, more could be added later"
-                    required
-                  />
-                  {errors.instituteCategory && (
-                    <p className="error-message">{errors.instituteCategory}</p>
-                  )}
-                </div>
-              </div>
-            )}
-
-            {/* Submit Button */}
-            <button type="submit">create profile</button>
-
-            <div className="text-center pt-5 text-sm">
-              Already have an account?
-              <Link href="/login" className="font-semibold pl-1 hover:underline">Login here</Link>
+      <div className="login_page_bg">
+        <div className="pt-28  flex flex-col justify-center items-center py-10">
+          <div className="login_form border p-10 bg-white rounded-3xl lg:w-[50%] md:w-[80%] max-sm:w-[90%]">
+            <div className="text-lg bg-secondary text-white rounded-full px-4 py-1">
+              Signup
             </div>
-          </form>
+            <h2 className="text-blackClr text-3xl font-bold mb-10">
+              As a Tutor
+            </h2>
+            {/* Checkbox selection for form type */}
+            <div className="mb-5 bg-primary/20 rounded-full px-4 py-2 max-sm:rounded-lg">
+              <label className="mr-4 max-sm:block ">
+                <input
+                  type="radio"
+                  name="formType"
+                  value="individual"
+                  onChange={() => setSelectedForm("individual")}
+                  checked={selectedForm === "individual"}
+                />{" "}
+                <span>I am an Individual</span>
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="formType"
+                  value="institute"
+                  onChange={() => setSelectedForm("institute")}
+                  checked={selectedForm === "institute"}
+                />{" "}
+                I run an Institute
+              </label>
+            </div>
+
+            <form onSubmit={handleSubmit}>
+              {/* Render the individual tutor form only when selected */}
+              {selectedForm === "individual" && (
+                <div className="individualTutor">
+                  <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4">
+                    <div className="form-group">
+                      {/* <label htmlFor="fullname">
+                        Full Name<span className="asterisk">*</span>
+                      </label> */}
+                      <input
+                        type="text"
+                        id="fullname"
+                        value={fullname}
+                        onChange={(e) => setFullName(e.target.value)}
+                        placeholder="Enter your full name (e.g. Aditya Raj)"
+                        required
+                      />
+                      {errors.fullname && (
+                        <p className="error-message">{errors.fullname}</p>
+                      )}
+                    </div>
+
+                    <div className="form-group">
+                      {/* <label htmlFor="indiEmail">
+                        Email Address<span className="asterisk">*</span>
+                      </label> */}
+                      <input
+                        type="email"
+                        id="indiEmail"
+                        value={indiEmail}
+                        onChange={(e) => setIndiEmail(e.target.value)}
+                        placeholder="Enter your email (e.g. aditya@gmail.com)"
+                        required
+                      />
+                      {errors.indiEmail && (
+                        <p className="error-message">{errors.indiEmail}</p>
+                      )}
+                    </div>
+                  </div>
+
+                  <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4">
+                    <div className="form-group">
+                      {/* <label htmlFor="indiPhone">
+                        Phone Number<span className="asterisk">*</span>
+                      </label> */}
+                      <input
+                        type="text"
+                        id="indiPhone"
+                        value={indiPhone}
+                        onChange={(e) => setIndiPhone(e.target.value)}
+                        placeholder="Enter your phone number"
+                        required
+                      />
+                      {errors.indiPhone && (
+                        <p className="error-message">{errors.indiPhone}</p>
+                      )}
+                    </div>
+
+                    <div className="form-group">
+                      {/* <label htmlFor="gender" className="block">
+                        Gender<span className="asterisk">*</span>
+                      </label> */}
+                      <select
+                        id="gender"
+                        value={gender}
+                        onChange={(e) => setGender(e.target.value)}
+                        required
+                      >
+                        <option value="">Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                      </select>
+                      {errors.gender && (
+                        <p className="error-message">{errors.gender}</p>
+                      )}
+                    </div>
+                  </div>
+
+                  <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4">
+                    <div className="form-group relative">
+                      {/* <label htmlFor="indiPassword">
+                        Password<span className="asterisk">*</span>
+                      </label> */}
+                      <input
+                        type={showPassword ? "text" : "password"}
+                        id="indiPassword"
+                        value={indiPassword}
+                        onChange={(e) => setIndiPassword(e.target.value)}
+                        placeholder="********"
+                        required
+                      />
+                      {/* Toggle password visibility */}
+                      <span
+                        className="absolute right-2 top-3 cursor-pointer"
+                        onClick={togglePasswordVisibility}
+                      >
+                        {showPassword ? <FaEyeSlash /> : <FaEye />}
+                      </span>
+                      {errors.indiPassword && (
+                        <p className="error-message">{errors.indiPassword}</p>
+                      )}
+                    </div>
+
+                    <div className="form-group relative">
+                      {/* <label htmlFor="indiConfirmPassword">
+                        Confirm Password<span className="asterisk">*</span>
+                      </label> */}
+                      <input
+                        type={showConfirmPassword ? "text" : "password"}
+                        id="indiConfirmPassword"
+                        value={indiConfirmPassword}
+                        onChange={(e) => setIndiConfirmPassword(e.target.value)}
+                        placeholder="********"
+                        required
+                      />
+                      {/* Toggle password visibility */}
+                      <span
+                        className="absolute right-2 top-3 cursor-pointer"
+                        onClick={toggleConfirmPasswordVisibility}
+                      >
+                        {showConfirmPassword ? <FaEyeSlash /> : <FaEye />}
+                      </span>
+                      {errors.indiConfirmPassword && (
+                        <p className="error-message">
+                          {errors.indiConfirmPassword}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+
+                  <div className="form-group">
+                    {/* <label htmlFor="indipincode">
+                      Pincode/Locality<span className="asterik">*</span>
+                    </label> */}
+                    <input
+                      id="indipincode"
+                      value={indipincode}
+                      onChange={(e) => setIndiPincode(e.target.value)}
+                      placeholder="Enter pincode or locaity (e.g. 560076 or Netaji Subash Place)"
+                      required
+                    />
+                    {errors.indipincode && (
+                      <p className="error-message">{errors.indipincode}</p>
+                    )}
+                  </div>
+
+                  <div className="form-group">
+                    {/* <label htmlFor="indicategory">
+                      Main Categories<span className="asterik">*</span>
+                    </label> */}
+                    <textarea
+                      id="indicategory"
+                      value={indicategory}
+                      onChange={(e) => setIndiCategory(e.target.value)}
+                      placeholder="Enter main category you teach, more could be added later"
+                      required
+                    />
+                    {errors.indicategory && (
+                      <p className="error-message">{errors.indicategory}</p>
+                    )}
+                  </div>
+                </div>
+              )}
+
+              {/* Render the institute tutor form only when selected */}
+              {selectedForm === "institute" && (
+                <div className="instituteTutor">
+                  <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4">
+                    <div className="form-group">
+                      <label htmlFor="instituteName">
+                        Institute Name<span className="asterisk">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        id="instituteName"
+                        value={instituteName}
+                        onChange={(e) => setInstituteName(e.target.value)}
+                        placeholder="Enter institute name (e.g. T.I.M.E)"
+                        required
+                      />
+                      {errors.instituteName && (
+                        <p className="error-message">{errors.instituteName}</p>
+                      )}
+                    </div>
+
+                    <div className="form-group">
+                      <label htmlFor="ownerName">
+                        Owner Name<span className="asterisk">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        id="ownerName"
+                        value={ownerName}
+                        onChange={(e) => setInstituteOwnerName(e.target.value)}
+                        placeholder="Owner or contact person's name"
+                        required
+                      />
+                      {errors.ownerName && (
+                        <p className="error-message">{errors.ownerName}</p>
+                      )}
+                    </div>
+                  </div>
+
+                  <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4">
+                    <div className="form-group">
+                      <label htmlFor="instituteEmail">
+                        Email Address<span className="asterisk">*</span>
+                      </label>
+                      <input
+                        type="email"
+                        id="instituteEmail"
+                        value={instituteEmail}
+                        onChange={(e) => setInstituteEmail(e.target.value)}
+                        placeholder="Enter institue email (e.g. time@gmail.com)"
+                        required
+                      />
+                      {errors.instituteEmail && (
+                        <p className="error-message">{errors.instituteEmail}</p>
+                      )}
+                    </div>
+
+                    <div className="form-group">
+                      <label htmlFor="instituePhone">
+                        Phone Number<span className="asterisk">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        id="instituePhone"
+                        value={instituePhone}
+                        onChange={(e) => setInstituePhone(e.target.value)}
+                        placeholder="Enter institute phone number"
+                        required
+                      />
+                      {errors.instituePhone && (
+                        <p className="error-message">{errors.instituePhone}</p>
+                      )}
+                    </div>
+                  </div>
+
+                  <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4">
+                    <div className="form-group relative">
+                      <label htmlFor="institutePassword">
+                        Password<span className="asterisk">*</span>
+                      </label>
+                      <input
+                        type={showPassword2 ? "text" : "password"}
+                        id="institutePassword"
+                        value={institutePassword}
+                        onChange={(e) => setInstitutePassword(e.target.value)}
+                        placeholder="********"
+                        required
+                      />
+                      {/* Toggle password visibility */}
+                      <span
+                        className="absolute right-2 top-9 cursor-pointer"
+                        onClick={togglePasswordVisibility2}
+                      >
+                        {showPassword2 ? <FaEyeSlash /> : <FaEye />}
+                      </span>
+                      {errors.institutePassword && (
+                        <p className="error-message">
+                          {errors.institutePassword}
+                        </p>
+                      )}
+                    </div>
+
+                    <div className="form-group relative">
+                      <label htmlFor="instituteConfirmPassword">
+                        Confirm Password<span className="asterisk">*</span>
+                      </label>
+                      <input
+                        type={showConfirmPassword2 ? "text" : "password"}
+                        id="instituteConfirmPassword"
+                        value={instituteConfirmPassword}
+                        onChange={(e) =>
+                          setInstituteConfirmPassword(e.target.value)
+                        }
+                        placeholder="********"
+                        required
+                      />
+                      {/* Toggle password visibility */}
+                      <span
+                        className="absolute right-2 top-9 cursor-pointer"
+                        onClick={toggleConfirmPasswordVisibility2}
+                      >
+                        {showConfirmPassword2 ? <FaEyeSlash /> : <FaEye />}
+                      </span>
+                      {errors.instituteConfirmPassword && (
+                        <p className="error-message">
+                          {errors.instituteConfirmPassword}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+
+                  <div className="form-group">
+                    <label htmlFor="instituePincode">
+                      Pincode/Locality<span className="asterik">*</span>
+                    </label>
+                    <input
+                      id="instituePincode"
+                      value={instituePincode}
+                      onChange={(e) => setInstituePincode(e.target.value)}
+                      placeholder="Enter pincode or locaity (e.g. 560076 or Netaji Subash Place)"
+                      required
+                    />
+                    {errors.instituePincode && (
+                      <p className="error-message">{errors.instituePincode}</p>
+                    )}
+                  </div>
+
+                  <div className="form-group">
+                    <label htmlFor="instituteCategory">
+                      Main Categories<span className="asterik">*</span>
+                    </label>
+                    <textarea
+                      id="instituteCategory"
+                      value={instituteCategory}
+                      onChange={(e) => setInstituteCategory(e.target.value)}
+                      placeholder="Enter main category you teach, more could be added later"
+                      required
+                    />
+                    {errors.instituteCategory && (
+                      <p className="error-message">
+                        {errors.instituteCategory}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              )}
+
+              {/* Submit Button */}
+              <button type="submit">create profile</button>
+
+              <div className="text-center pt-5 text-sm">
+                Already have an account?
+                <Link
+                  href="/login"
+                  className="font-semibold pl-1 hover:underline"
+                >
+                  Login here
+                </Link>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </Layout>
