@@ -1,26 +1,52 @@
-import React from "react";
+import React ,{useEffect,useState} from "react";
 
 //imports for swiper.js
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, A11y } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import axios from "axios";
 
 const OfferBanner = () => {
-  const offerBanner = [
-    {
-      _id: 1,
-      imageURL: "",
-    },
-    {
-      _id: 2,
-      imageURL: "",
-    },
-    {
-      _id: 3,
-      imageURL: "",
-    },
-  ];
+
+
+const [offerBanner,setOfferBanner]=useState([])
+const [loading, setLoading] = useState(true);
+
+
+useEffect(() => {
+  const fetchmodules = async () => {
+      setLoading(true);
+      try {
+          const response = await axios.get('/api/banner');
+          console.log(response);
+
+          setOfferBanner(response.data.data)
+          // Assuming the API sends total items
+          setLoading(false);
+      } catch (error) {
+          console.error('Error fetching data:', error);
+          setLoading(false);
+      }
+  };
+
+  fetchmodules();
+}, []);
+
+  // const offerBanner = [
+  //   {
+  //     _id: 1,
+  //     imageURL: "",
+  //   },
+  //   {
+  //     _id: 2,
+  //     imageURL: "",
+  //   },
+  //   {
+  //     _id: 3,
+  //     imageURL: "",
+  //   },
+  // ];
 
   return (
     <>
