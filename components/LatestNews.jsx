@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 //imports for swiper.js
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -7,47 +7,64 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 const LatestNews = () => {
+  const [latestNews, setlatestNews] = useState([]);
+
+
+  useEffect(() => {
+    // Simulate data fetching
+    const fetchData = async () => {
+      // Simulated data from an API
+      const res = await fetch(`/api/blogs`);
+      const result = await res.json();
+      if (result.success) {
+        setlatestNews(result.data);
+
+      }
+    };
+
+    fetchData();
+  }, []);
   //upcoming events json data
-  const latestNews = [
-    {
-      _id: 1,
-      imageURL: "/assets/images/why_choose_iltes.png",
-      tag: "Tips & Tricks",
-      title: "your heroic hub for conferences and gatheings",
-      name: "John Doe",
-      date: "September 9, 2023",
-    },
-    {
-      _id: 2,
-      imageURL: "/assets/images/why_choose_iltes.png",
-      tag: "Tips & Tricks",
-      title: "your heroic hub for conferences and gatheings",
-      name: "John Doe",
-      date: "September 9, 2023",
-    },
-    {
-      _id: 3,
-      imageURL: "/assets/images/why_choose_iltes.png",
-      tag: "Tips & Tricks",
-      title: "your heroic hub for conferences and gatheings",
-      name: "John Doe",
-      date: "September 9, 2023",
-    },
-    {
-      _id: 4,
-      imageURL: "/assets/images/why_choose_iltes.png",
-      tag: "Tips & Tricks",
-      title: "your heroic hub for conferences and gatheings",
-      name: "John Doe",
-      date: "September 9, 2023",
-    },
-  ];
+  // const latestNews = [
+  //   {
+  //     _id: 1,
+  //     imageURL: "/assets/images/why_choose_iltes.png",
+  //     tag: "Tips & Tricks",
+  //     title: "your heroic hub for conferences and gatheings",
+  //     name: "John Doe",
+  //     date: "September 9, 2023",
+  //   },
+  //   {
+  //     _id: 2,
+  //     imageURL: "/assets/images/why_choose_iltes.png",
+  //     tag: "Tips & Tricks",
+  //     title: "your heroic hub for conferences and gatheings",
+  //     name: "John Doe",
+  //     date: "September 9, 2023",
+  //   },
+  //   {
+  //     _id: 3,
+  //     imageURL: "/assets/images/why_choose_iltes.png",
+  //     tag: "Tips & Tricks",
+  //     title: "your heroic hub for conferences and gatheings",
+  //     name: "John Doe",
+  //     date: "September 9, 2023",
+  //   },
+  //   {
+  //     _id: 4,
+  //     imageURL: "/assets/images/why_choose_iltes.png",
+  //     tag: "Tips & Tricks",
+  //     title: "your heroic hub for conferences and gatheings",
+  //     name: "John Doe",
+  //     date: "September 9, 2023",
+  //   },
+  // ];
 
   return (
     <>
       <div className="container relative my-10 py-10 mx-auto px-4 sm:px-6 md:px-8 lg:px-24">
         <div className="text-4xl uppercase font-bold mt-2 pb-4 text-center max-sm:text-2xl">
-          latest news & updates
+          latest Blogs & updates
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-1 pb-10">
           <div></div>
@@ -96,7 +113,7 @@ const LatestNews = () => {
                 <div className="p-2 rounded-3xl">
                   <figure className="relative w-full overflow-hidden rounded-3xl animated-border-box-white p-1">
                     <img
-                      src={data.imageURL}
+                      src={data.cardImage}
                       alt={data.title}
                       loading="lazy"
                       className="rounded-3xl h-[250px] w-full transition duration-700 "
@@ -112,7 +129,8 @@ const LatestNews = () => {
                     <div>
                       by <span className="text-black">{data.name}</span>
                     </div>
-                    <div>S{data.date}</div>
+                    <div>{new Date(data.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</div>
+
                   </div>
                 </div>
               </SwiperSlide>

@@ -85,7 +85,7 @@ const HeroSection = () => {
               <h1 className="text-primary font-semibold text-5xl uppercase mt-1 max-sm:text-2xl ipad_responsive">
                 To{" "}
                 <span className="shining-border border-b-4 border-green-500 -mb-3 max-sm:-mb-4">
-                  
+
                   {textLoaded ? renderText() : text}
                 </span>
               </h1>
@@ -175,9 +175,8 @@ const HeroSection = () => {
               <img
                 src="/assets/images/main_element.png"
                 alt="Main Element"
-                className={`transition-transform duration-1000 ease-out ${
-                  zoomIn ? "zoom-in" : ""
-                }`}
+                className={`transition-transform duration-1000 ease-out ${zoomIn ? "zoom-in" : ""
+                  }`}
               />
               <div className="absolute bottom-0 right-32 max-sm:right-auto bg-primary/50 p-7 rounded-t-2xl flex flex-col text-white w-[320px]">
                 <div className="text-xs uppercase">
