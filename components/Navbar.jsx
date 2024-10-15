@@ -142,17 +142,17 @@ export default function Nav() {
   return (
     <div className="fixed top-0 left-0 w-full bg-white z-50 border-b">
       <div className="mx-auto flex items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
-        <div className="inline-flex items-center space-x-2">
+        <div className="inline-flex items-center space-x-2 responsive_css_logo">
           <Logo />
         </div>
         {/* Mega menu for desktop */}
         <div className="hidden grow items-start lg:flex">
-          <ul className="ml-12 inline-flex space-x-8">
+          <ul className="ml-12 inline-flex space-x-8 responsive_css_ul">
             {menuItems.map((item) => (
               <li key={item.name} className="relative group">
                 <a
                   href={item.href}
-                  className="text-sm font-semibold text-gray-800 uppercase transition-all duration-500 hover:text-secondary hover:cursor-pointer flex items-center"
+                  className="text-sm font-semibold text-gray-800 uppercase transition-all duration-500 hover:text-secondary hover:cursor-pointer flex items-center responsive_css"
                 >
                   {item.name}
                   {item.icon && (
@@ -186,7 +186,7 @@ export default function Nav() {
           </ul>
         </div>
         <div className="hidden lg:block">
-          <div className="flex gap-8">
+          <div className="flex gap-8 items-center responsive_css_buttonDiv">
             <button
               onClick={toggleSearch}
               className="text-whiteClr transition-all duration-500 bg-primaryClr flex justify-center align-middle hover:text-secondary py-2 hover:bg-whiteClr hover:rounded-full hover:shadow-gray-900 hover:shadow-whiteClr"

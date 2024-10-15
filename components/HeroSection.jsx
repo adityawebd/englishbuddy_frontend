@@ -79,10 +79,10 @@ const HeroSection = () => {
                 English Prep
                 <span className="text-secondary font-extrabold">X</span>perts
               </h5>
-              <h1 className="text-primary font-semibold text-5xl uppercase mt-4  max-sm:text-2xl">
+              <h1 className="text-primary font-semibold text-5xl uppercase mt-4  max-sm:text-2xl ipad_responsive">
                 Your Ultimate guide
               </h1>
-              <h1 className="text-primary font-semibold text-5xl uppercase mt-1 max-sm:text-2xl">
+              <h1 className="text-primary font-semibold text-5xl uppercase mt-1 max-sm:text-2xl ipad_responsive">
                 To{" "}
                 <span className="shining-border border-b-4 border-green-500 -mb-3 max-sm:-mb-4">
                   
@@ -90,7 +90,7 @@ const HeroSection = () => {
                 </span>
               </h1>
 
-              <p className="text-md text-textClr mt-8 font-medium mb-10 lg:pr-64">
+              <p className="text-md text-textClr mt-8 font-medium mb-10 lg:pr-64 ipad_responsive_heroPara">
                 Your one-stop destination for all things related to IELTS,
                 TOEFL, PTE
               </p>

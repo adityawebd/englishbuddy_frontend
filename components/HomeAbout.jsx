@@ -26,7 +26,7 @@ const HomeAbout = () => {
             <img
               src="https://www.glion.edu/wp-content/uploads/2023/07/Entrepreneur-vs-business-owner-whats-the-difference-in-hospitality.jpg"
               alt=""
-              className="rounded-2xl mt-5 w-[600px]"
+              className="rounded-2xl mt-5 w-[600px] ipad_homeAboutIMG"
               data-aos="zoom-in-right"
               data-aos-duration="700"
             />

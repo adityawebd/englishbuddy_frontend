@@ -4,7 +4,7 @@ import Layout from "../components/Layout";
 import { Bounce, ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Link from "next/link";
-import { FaEye, FaEyeSlash } from "react-icons/fa"; 
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -54,7 +54,8 @@ export default function Login() {
     if (!password.trim()) {
       validationErrors.password = "Password is required";
     } else if (password.length < 6) {
-      validationErrors.password = "Password should be at least 6 characters long";
+      validationErrors.password =
+        "Password should be at least 6 characters long";
     }
 
     return validationErrors;
@@ -73,75 +74,83 @@ export default function Login() {
   return (
     <Layout>
       <ToastContainer />
-      <div className="pt-28 container flex flex-col justify-center items-center py-10">
-        <div className="text-lg bg-secondary text-white rounded-full px-4 py-1">
-          Login to your Account
-        </div>
-        <h2 className="text-blackClr text-3xl font-bold mb-3">As a Tutor/Student</h2>
-
-        <div className="contact_form border p-10 bg-gray-200">
-          <form onSubmit={handleSubmit}>
-            <div className="form-group">
-              <label htmlFor="email">
-                Email Address<span className="asterisk">*</span>
-              </label>
-              <input
-                type="email"
-                id="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email (e.g. aditya@gmail.com)"
-                required
-              />
-              {errors.email && (
-                <p className="error-message text-red-600 text-sm">
-                  {errors.email}
-                </p>
-              )}
+      <div className="login_page_bg">
+        <div className="pt-28 flex flex-col justify-center items-center py-10">
+          <div className="login_form border p-10 bg-white rounded-3xl shadow-2xl lg:w-[50%] md:w-[80%] max-sm:w-[90%]">
+            <div className="text-lg bg-secondary text-white rounded-full px-4 py-1">
+              Login to your Account
             </div>
+            <h2 className="text-blackClr text-3xl font-bold mb-10">
+              As a Tutor/Student
+            </h2>
+            <form onSubmit={handleSubmit}>
+              <div className="form-group">
+                <label htmlFor="email">
+                  Email Address<span className="asterisk">*</span>
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your email (e.g. aditya@gmail.com)"
+                  required
+                />
+                {errors.email && (
+                  <p className="error-message text-red-600 text-sm">
+                    {errors.email}
+                  </p>
+                )}
+              </div>
 
-            <div className="form-group relative">
-              <label htmlFor="password">
-                Password<span className="asterisk">*</span>
-              </label>
-              <input
-                type={showPassword ? "text" : "password"}
-                id="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="********"
-                required
-              />
-              {/* Toggle password visibility */}
-              <span
-                className="absolute right-2 top-9 cursor-pointer"
-                onClick={togglePasswordVisibility}
+              <div className="form-group relative">
+                <label htmlFor="password">
+                  Password<span className="asterisk">*</span>
+                </label>
+                <input
+                  type={showPassword ? "text" : "password"}
+                  id="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="********"
+                  required
+                />
+                {/* Toggle password visibility */}
+                <span
+                  className="absolute right-2 top-9 cursor-pointer"
+                  onClick={togglePasswordVisibility}
+                >
+                  {showPassword ? <FaEyeSlash /> : <FaEye />}
+                </span>
+                {errors.password && (
+                  <p className="error-message text-red-600 text-sm">
+                    {errors.password}
+                  </p>
+                )}
+              </div>
+
+              <div className="flex justify-center items-center text-xs mt-2">
+                <Link href="/forget-password">Forgot Password?</Link>
+              </div>
+
+              <button
+                type="submit"
+                className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
               >
-                {showPassword ? <FaEyeSlash /> : <FaEye />}
-              </span>
-              {errors.password && (
-                <p className="error-message text-red-600 text-sm">
-                  {errors.password}
-                </p>
-              )}
-            </div>
+                Login
+              </button>
 
-            <div className="flex justify-center items-center text-xs mt-2">
-              <Link href="/forget-password">Forgot Password?</Link>
-            </div>
-
-            <button
-              type="submit"
-              className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-            >
-              Login
-            </button>
-
-            <div className="text-center pt-5 text-sm">
-              Don't have account?
-              <Link href="/signup-option" className="font-semibold pl-1 hover:underline">Signup Now</Link>
-            </div>
-          </form>
+              <div className="text-center pt-5 text-sm">
+                Don't have account?
+                <Link
+                  href="/signup-option"
+                  className="font-semibold pl-1 hover:underline"
+                >
+                  Signup Now
+                </Link>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </Layout>
