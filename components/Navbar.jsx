@@ -13,7 +13,6 @@ import {
   MapPin
 } from "lucide-react";
 import Image from "next/image";
-import { Ticket } from "lucide-react";
 import SearchBar from "./SearchBar";
 
 const menuItems = [
@@ -26,7 +25,8 @@ const menuItems = [
   //   href: "/about-us",
   // },
   {
-    name: "Buy Study Material",
+    name: "Buy Study Material ",
+    icon: <ChevronDown />,
     subMenu: [
       { name: "IELTS", href: "/buy-study-material/ielts" },
       { name: "PTE", href: "/buy-study-material/pte" },
@@ -48,6 +48,7 @@ const menuItems = [
   // },
   {
     name: "Book your test",
+    icon: <ChevronDown />,
     subMenu: [
       { name: "IELTS", href: "/book-your-test/ielts" },
       { name: "PTE", href: "/book-your-test/pte" },
@@ -64,6 +65,7 @@ const menuItems = [
   },
   {
     name: "More",
+    icon: <ChevronDown />,
     subMenu: [
       { name: "ABOUT US", href: "/about-us" },
       { name: "BLOGS", href: "/blogs" },
@@ -150,9 +152,14 @@ export default function Nav() {
               <li key={item.name} className="relative group">
                 <a
                   href={item.href}
-                  className="text-sm font-semibold text-gray-800 uppercase transition-all duration-500 hover:text-secondary hover:cursor-pointer"
+                  className="text-sm font-semibold text-gray-800 uppercase transition-all duration-500 hover:text-secondary hover:cursor-pointer flex items-center"
                 >
                   {item.name}
+                  {item.icon && (
+                      <span className="transform transition-transform duration-300 group-hover:rotate-180">
+                        {item.icon}
+                      </span>
+                    )}
                 </a>
                 {/* Check if the menu item has a submenu */}
                 {item.subMenu && (
