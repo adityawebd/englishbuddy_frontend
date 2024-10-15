@@ -164,7 +164,7 @@ export default function Nav() {
                 {/* Check if the menu item has a submenu */}
                 {item.subMenu && (
                   <div className="absolute left-0 top-full mt-2 hidden w-56 bg-white shadow-xl rounded-lg opacity-0 transform translate-y-4 transition-transform duration-700 ease-in-out group-hover:opacity-100 group-hover:-translate-y-1 group-hover:block  z-50 border-2 border-t-secondary border-b-secondary border-l-primary border-r-primary">
-                    <ul className="grid grid-cols-1 gap-4 p-4">
+                    <ul className="grid grid-cols-1 gap-4 p-4 navbar_megamenu_boxshadow">
                       {item.subMenu.map((subItem) => (
                         <li
                           key={subItem.name}

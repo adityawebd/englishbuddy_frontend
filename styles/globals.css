@@ -18,6 +18,12 @@
   margin-top: -20px;
 }
 
+.navbar_megamenu_boxshadow {
+  -webkit-box-shadow: -1px -8px 21px -4px rgba(245,30,30,0.31);
+  -moz-box-shadow: -1px -8px 21px -4px rgba(245,30,30,0.31);
+  box-shadow: -1px -8px 21px -4px rgba(245,30,30,0.31);
+}
+
 .our_mentors_bg {
   background: url("../public/assets/images/main_element.png");
   background-position: center center;
