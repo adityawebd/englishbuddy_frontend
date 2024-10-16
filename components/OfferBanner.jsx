@@ -10,13 +10,13 @@ import axios from "axios";
 const OfferBanner = ({serverIP}) => {
 
 
-  const ip=serverIP
+  const ip='192.168.1.6'
 
   console.log(ip);
 
 
   const getImageUrl = (url) => {
-    return url.replace('localhost', serverIP);
+    return url.replace('localhost', ip);
   };
   
 
@@ -122,7 +122,8 @@ useEffect(() => {
                     : "/assets/eng-bud-banner-demo.png"
                 }
                 alt="offer-banner-image"
-                className="w-full lg:h-[400] md:h-[300] max-sm:h-[200]"
+                // className="w-full lg:h-[400px] md:h-[300] max-sm:h-[200]"
+                className="h-[auto] lg:max-h-[400px] md:max-h-[300px] max-sm:max-h-[200px] mx-auto"
               />
             </SwiperSlide>
           ))}

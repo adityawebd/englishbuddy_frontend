@@ -92,7 +92,13 @@ export default function Login() {
                   type="email"
                   id="email"
                   value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  // onChange={(e) => setEmail(e.target.value)}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                    if (errors.email) {
+                      setErrors((prev) => ({ ...prev, email: "" }));
+                    }
+                  }}
                   placeholder="Enter your email (e.g. aditya@gmail.com)"
                   required
                 />
@@ -111,7 +117,13 @@ export default function Login() {
                   type={showPassword ? "text" : "password"}
                   id="password"
                   value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  // onChange={(e) => setPassword(e.target.value)}
+                  onChange={(e) => {
+                    setPassword(e.target.value);
+                    if (errors.password) {
+                      setErrors((prev) => ({ ...prev, password: "" }));
+                    }
+                  }}
                   placeholder="********"
                   required
                 />

@@ -41,45 +41,41 @@ const ContactForm = () => {
     India: ["Mumbai", "Delhi", "Bangalore", "Chennai", "Hyderabad"],
   };
 
-
   const showToast = (type, message, options = {}) => {
     const toastOptions = {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
-        transition: Bounce,
-        ...options, // Merge any additional options
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      transition: Bounce,
+      ...options, // Merge any additional options
     };
 
     switch (type) {
-        case 'success':
-            toast.success(message, toastOptions);
-            break;
-        case 'info':
-            toast.info(message, toastOptions);
-            break;
-        case 'error':
-            toast.error(message, toastOptions);
-            break;
-        default:
-            toast(message, toastOptions); // Fallback to a default toast
-            break;
+      case "success":
+        toast.success(message, toastOptions);
+        break;
+      case "info":
+        toast.info(message, toastOptions);
+        break;
+      case "error":
+        toast.error(message, toastOptions);
+        break;
+      default:
+        toast(message, toastOptions); // Fallback to a default toast
+        break;
     }
-};
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     const errors = validateForm();
     if (Object.keys(errors).length === 0) {
-
-
-      const data={
-
+      const data = {
         firstname,
         lastname,
         email,
@@ -87,33 +83,82 @@ const ContactForm = () => {
         country,
         city,
         message,
-      }
+      };
 
       try {
-        const response = await axios.post('/api/contactus', data);
-        //console.log('Data submitted successfully:', response.data);
-        showToast('success', 'Request Submitted successfully', { autoClose: 3000 });
-       
-        // Optionally, reset the form or handle the response as needed
-    } catch (error) {
-        console.error('Error submitting data:', error);
-        showToast('error', '❌ Error! Something went wrong.', { autoClose: 3000 });
-    }
+        const response = await axios.post("/api/contactus", data);
+        showToast("success", "Request Submitted successfully", {
+          autoClose: 3000,
+        });
 
-      
-      // Reset all form fields to empty
-      setFirstName("");
-      setLastName("");
-      setEmail("");
-      setPhone("");
-      setCountry("");
-      setCity("");
-      setMessage("");
-      
-      //   alert("Form Submitted Successfully!");
-      // setRedirectToHome(true);
+        // Reset all form fields to empty
+        setFirstName("");
+        setLastName("");
+        setEmail("");
+        setPhone("");
+        setCountry("");
+        setCity("");
+        setMessage("");
+      } catch (error) {
+        console.error("Error submitting data:", error);
+        showToast("error", "❌ Error! Something went wrong.", {
+          autoClose: 3000,
+        });
+      }
     } else {
       setErrors(errors);
+    }
+  };
+
+  const handleInputChange = (field, value) => {
+    // Clear error when the input is valid
+    if (field === "firstname" && value.trim().length >= 3) {
+      setErrors((prevErrors) => ({ ...prevErrors, firstname: null }));
+    }
+    if (field === "email" && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+      setErrors((prevErrors) => ({ ...prevErrors, email: null }));
+    }
+    if (field === "phone" && value.length === 10) {
+      setErrors((prevErrors) => ({ ...prevErrors, phone: null }));
+    }
+    if (field === "country" && value.trim()) {
+      setErrors((prevErrors) => ({ ...prevErrors, country: null }));
+    }
+    if (field === "city" && value.trim()) {
+      setErrors((prevErrors) => ({ ...prevErrors, city: null }));
+    }
+    if (field === "message" && value.length >= 10) {
+      setErrors((prevErrors) => ({ ...prevErrors, message: null }));
+    }
+
+    switch (field) {
+      case "firstname":
+        setFirstName(value);
+        break;
+      case "lastname":
+        setLastName(value);
+        break;
+      case "email":
+        setEmail(value);
+        break;
+      case "phone":
+        // Allow only up to 10 digits
+        if (value.length <= 10) {
+          setPhone(value);
+        }
+        break;
+      case "country":
+        setCountry(value);
+        setCity(""); // Reset city when country changes
+        break;
+      case "city":
+        setCity(value);
+        break;
+      case "message":
+        setMessage(value);
+        break;
+      default:
+        break;
     }
   };
 
@@ -167,21 +212,17 @@ const ContactForm = () => {
         <h2 className="text-blackClr text-3xl font-bold mb-3 max-sm:text-xl max-sm:mt-5">
           Get In Touch With Us!
         </h2>
-        <div
-          className="contact_form p-10 rounded-3xl"
-          onSubmit={handleSubmit}
-        >
+        <div className="contact_form p-10 rounded-3xl" onSubmit={handleSubmit}>
           <form>
             <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4">
               <div className="form-group">
-                {/* <label htmlFor="firstName">
-                  First Name<span className="asterik">*</span>
-                </label> */}
                 <input
                   type="text"
                   id="firstName"
                   value={firstname}
-                  onChange={(e) => setFirstName(e.target.value)}
+                  onChange={(e) =>
+                    handleInputChange("firstname", e.target.value)
+                  }
                   placeholder="Enter first name"
                   required
                 />
@@ -190,27 +231,24 @@ const ContactForm = () => {
                 )}
               </div>
               <div className="form-group">
-                {/* <label htmlFor="lastName">Last Name</label> */}
                 <input
                   type="text"
                   id="lastName"
                   value={lastname}
-                  onChange={(e) => setLastName(e.target.value)}
+                  onChange={(e) =>
+                    handleInputChange("lastname", e.target.value)
+                  }
                   placeholder="Enter last name"
                 />
               </div>
             </div>
-
             <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1  gap-4">
               <div className="form-group">
-                {/* <label htmlFor="email">
-                  Email Address<span className="asterik">*</span>
-                </label> */}
                 <input
                   type="email"
                   id="email"
                   value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={(e) => handleInputChange("email", e.target.value)}
                   placeholder="Email"
                   required
                 />
@@ -219,14 +257,11 @@ const ContactForm = () => {
                 )}
               </div>
               <div className="form-group">
-                {/* <label htmlFor="phone">
-                  Phone Number<span className="asterik">*</span>
-                </label> */}
                 <input
                   type="number"
                   id="phone"
                   value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
+                  onChange={(e) => handleInputChange("phone", e.target.value)}
                   placeholder="Enter Phone Number"
                   required
                 />
@@ -235,19 +270,12 @@ const ContactForm = () => {
                 )}
               </div>
             </div>
-
             <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4">
               <div className="form-group">
-                {/* <label htmlFor="country" className="block">
-                  Desired Country<span className="asterik">*</span>
-                </label> */}
                 <select
                   id="country"
                   value={country}
-                  onChange={(e) => {
-                    setCountry(e.target.value);
-                    setCity(""); // Reset city when country changes
-                  }}
+                  onChange={(e) => handleInputChange("country", e.target.value)}
                   required
                 >
                   <option value="">-- Select Country --</option>
@@ -262,14 +290,10 @@ const ContactForm = () => {
                 )}
               </div>
               <div className="form-group">
-                {/* <label htmlFor="city" className="block">
-                  Nearest City<span className="asterik">*</span>
-                </label> */}
                 <select
                   id="city"
                   value={city}
-                  onChange={(e) => setCity(e.target.value)}
-                  disabled={!country} // Disable if no country is selected
+                  onChange={(e) => handleInputChange("city", e.target.value)}
                   required
                 >
                   <option value="">-- Select City --</option>
@@ -283,23 +307,19 @@ const ContactForm = () => {
                 {errors.city && <p className="error-message">{errors.city}</p>}
               </div>
             </div>
-
-            <div className="form-group">
-              {/* <label htmlFor="message">
-                Your Query<span className="asterik">*</span>
-              </label> */}
+            <div className="grid grid-cols-1 gap-4">
               <textarea
-                id="message"
+                rows="4"
+                cols="50"
                 value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                placeholder="My query is regarding..."
+                onChange={(e) => handleInputChange("message", e.target.value)}
+                placeholder="Type your message"
                 required
               />
               {errors.message && (
                 <p className="error-message">{errors.message}</p>
               )}
             </div>
-
             <button type="submit">SUBMIT</button>
           </form>
         </div>

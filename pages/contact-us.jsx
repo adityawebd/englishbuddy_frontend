@@ -83,7 +83,7 @@ export default function About() {
           </div>
         </div>
 
-        <div className="contactFormStyle">
+        {/* <div className="contactFormStyle">
           <div className="contactFormStyleWrapper ">
             <div className="contactFormStyleBookImg">
               <img src="/assets/images/eb_book_img.png" alt="" />
@@ -92,9 +92,19 @@ export default function About() {
               <ContactForm />
             </div>
           </div>
+        </div> */}
+        <div className="contactFormStyle lg:p-32 md:p-16 max-sm:p-8">
+          <div className="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 grid-cols-1 bg-white lg:p-10 rounded-3xl">
+            <div className="">
+              <img src="/assets/images/eb_book_img.png" alt="" />
+            </div>
+            <div className="flex justify-center items-center">
+              <ContactForm />
+            </div>
+          </div>
         </div>
 
-        <div className="container-sm py-5 mt-16" id="map">
+        {/* <div className="container-sm py-5 mt-16" id="map">
           <div className="flex flex-col justify-center items-center">
             <h2 className="text-blackClr text-3xl font-bold mb-3">
               Find Us on Google Map
@@ -117,7 +127,7 @@ export default function About() {
               ></iframe>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </Layout>
   );

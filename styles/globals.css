@@ -24,6 +24,27 @@
   box-shadow: -1px -8px 21px -4px rgba(245,30,30,0.31);
 }
 
+/* Spinner.css */
+.spinner {
+  width: 40px; /* Size of the spinner */
+  height: 40px;
+  border: 5px solid rgba(0, 0, 0, 0.1); /* Light border */
+  border-top-color: #f71d25; /* Color of the spinner */
+  border-radius: 50%;
+  animation: spin 1s ease-in-out infinite; /* Spin animation */
+  margin: 0 auto; /* Center the spinner */
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
 /* --------- navbar css for specific width --------------------- */
 @media(min-width: 1024px) and (max-width: 1300px) {
   .responsive_css_logo {
@@ -195,40 +216,10 @@
   background-size: cover;
   background-position: center center;
   /* border: 1px solid blue; */
-  padding: 100px 130px;
+  /* padding: 100px 130px; */
 
   display: flex;
   justify-content: end;
-}
-.contactFormStyleWrapper {
-  background: var(--white-clr);
-  border-radius: 30px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  padding: 50px;
-
-  display: flex;
-  justify-content: end;
-  width: 90%;
-
-  position: relative;
-}
-.contactFormStyleForm {
-  /* border: 1px solid red; */
-  width: 60%;
-}
-.contactFormStyleBookImg {
-  /* border: 1px solid red; */
-  position: absolute;
-  top: 0;
-  left: 0;
-  /* width: 50%; */
-  /* display: flex; */
-}
-.contactFormStyleBookImg img {
-  /* border: 1px solid green; */
-  width: 770px;
-  border-radius: 30px;
-  margin-left: -150px;
 }
 
 .contact_form {
@@ -309,115 +300,6 @@
   color: var(--primary-clr);
 }
 
-@media (max-width: 425px) {
-  .contactFormStyle {
-    /* border: 1px solid blue; */
-    padding: 20px;
-  }
-  .contactFormStyleWrapper {
-    /* border: 1px solid blue; */
-    padding: 10px;
-    flex-direction: column;
-    width: 100%;
-  }
-  .contactFormStyleForm {
-    /* border: 1px solid red; */
-    width: 100%;
-  }
-  .contactFormStyleBookImg {
-    /* border: 1px solid red; */
-    position: relative;
-  }
-  .contactFormStyleBookImg img {
-    /* border: 1px solid green; */
-    width: 100%;
-    margin-left: 0;
-  }
-}
-@media (min-width: 426px) and (max-width: 768px) {
-  .contactFormStyle {
-    /* border: 1px solid blue; */
-    padding: 20px;
-  }
-  .contactFormStyleWrapper {
-    /* border: 1px solid blue; */
-    padding: 10px;
-    flex-direction: column;
-    width: 100%;
-  }
-  .contactFormStyleForm {
-    /* border: 1px solid red; */
-    width: 100%;
-  }
-  .contactFormStyleBookImg {
-    /* border: 1px solid red; */
-    position: relative;
-  }
-  .contactFormStyleBookImg img {
-    /* border: 1px solid green; */
-    width: 100%;
-    margin-left: 0;
-  }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-  .contactFormStyle {
-    padding: 100px 50px;
-  }
-  .contactFormStyleWrapper {
-    padding: 30px;
-    width: 90%;
-
-    position: relative;
-  }
-  .contactFormStyleForm {
-    /* border: 1px solid red; */
-    width: 60%;
-  }
-  .contactFormStyleBookImg {
-    /* border: 1px solid red; */
-    position: absolute;
-    top: 0;
-    left: 0;
-    /* width: 50%; */
-    /* display: flex; */
-  }
-  .contactFormStyleBookImg img {
-    /* border: 1px solid green; */
-    width: 600px;
-    margin-left: -140px;
-    margin-top: 40px;
-  }
-}
-@media (min-width: 1025px) and (max-width: 1250px) {
-  .contactFormStyle {
-    padding: 100px 50px;
-  }
-  .contactFormStyleWrapper {
-    padding: 30px;
-    width: 90%;
-
-    position: relative;
-  }
-  .contactFormStyleForm {
-    /* border: 1px solid red; */
-    width: 60%;
-  }
-  .contactFormStyleBookImg {
-    /* border: 1px solid red; */
-    position: absolute;
-    top: 0;
-    left: 0;
-    /* width: 50%; */
-    /* display: flex; */
-  }
-  .contactFormStyleBookImg img {
-    /* border: 1px solid green; */
-    width: 700px;
-    margin-left: -140px;
-    /* margin-top: 40px; */
-  }
-}
 
 
 
