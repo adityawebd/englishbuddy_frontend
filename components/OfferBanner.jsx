@@ -7,7 +7,18 @@ import "swiper/css";
 import "swiper/css/navigation";
 import axios from "axios";
 
-const OfferBanner = () => {
+const OfferBanner = ({serverIP}) => {
+
+
+  const ip=serverIP
+
+  console.log(ip);
+
+
+  const getImageUrl = (url) => {
+    return url.replace('localhost', serverIP);
+  };
+  
 
 
 const [offerBanner,setOfferBanner]=useState([])
@@ -106,8 +117,8 @@ useEffect(() => {
               <img
                 key={banner._id}
                 src={
-                  banner.imageURL
-                    ? banner.imageURL
+                  getImageUrl(banner.imageURL)
+                    ? getImageUrl(banner.imageURL)
                     : "/assets/eng-bud-banner-demo.png"
                 }
                 alt="offer-banner-image"
