@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-
+import axios from "axios";
 import { Bounce, ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -41,10 +41,66 @@ const ContactForm = () => {
     India: ["Mumbai", "Delhi", "Bangalore", "Chennai", "Hyderabad"],
   };
 
-  const handleSubmit = (event) => {
+
+  const showToast = (type, message, options = {}) => {
+    const toastOptions = {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Bounce,
+        ...options, // Merge any additional options
+    };
+
+    switch (type) {
+        case 'success':
+            toast.success(message, toastOptions);
+            break;
+        case 'info':
+            toast.info(message, toastOptions);
+            break;
+        case 'error':
+            toast.error(message, toastOptions);
+            break;
+        default:
+            toast(message, toastOptions); // Fallback to a default toast
+            break;
+    }
+};
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const errors = validateForm();
     if (Object.keys(errors).length === 0) {
+
+
+      const data={
+
+        firstname,
+        lastname,
+        email,
+        phone,
+        country,
+        city,
+        message,
+      }
+
+      try {
+        const response = await axios.post('/api/contactus', data);
+        //console.log('Data submitted successfully:', response.data);
+        showToast('success', 'Request Submitted successfully', { autoClose: 3000 });
+       
+        // Optionally, reset the form or handle the response as needed
+    } catch (error) {
+        console.error('Error submitting data:', error);
+        showToast('error', '❌ Error! Something went wrong.', { autoClose: 3000 });
+    }
+
+      
       // Reset all form fields to empty
       setFirstName("");
       setLastName("");
@@ -53,9 +109,9 @@ const ContactForm = () => {
       setCountry("");
       setCity("");
       setMessage("");
-      notify();
+      
       //   alert("Form Submitted Successfully!");
-      setRedirectToHome(true);
+      // setRedirectToHome(true);
     } else {
       setErrors(errors);
     }

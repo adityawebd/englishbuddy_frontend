@@ -10,12 +10,12 @@ import LatestNews from "@/components/LatestNews";
 import Faq from "@/components/Faq";
 import Footer from "@/components/Footer";
 import OfferBanner from "@/components/OfferBanner";
-
-export default function Home() {
+import { getServerIP } from "@/lib/getServerIP";
+export default function Home({serverIP}) {
   return (
     <Layout>
       <HeroSection />
-      <OfferBanner />
+      <OfferBanner serverIP={serverIP} />
       <HomeAbout />
       <HomeWhyChoose />
       <OurMentors />
@@ -27,3 +27,19 @@ export default function Home() {
     </Layout>
   );
 }
+
+
+
+export async function getServerSideProps() {
+  const serverIP = getServerIP();
+
+
+  // console.log("hellow",serverIP)
+
+  return {
+    props: {
+      serverIP,
+    },
+  };
+}
+
