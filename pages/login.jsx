@@ -76,7 +76,7 @@ export default function Login() {
       <ToastContainer />
       <div className="login_page_bg">
         <div className="pt-28 flex flex-col justify-center items-center py-10">
-          <div className="login_form border p-10 bg-white rounded-3xl shadow-2xl lg:w-[50%] md:w-[80%] max-sm:w-[90%]">
+          <div className="login_form border p-10 bg-white rounded-3xl shadow-2xl lg:w-[30%] md:w-[80%] max-sm:w-[90%]">
             <div className="text-lg bg-secondary text-white rounded-full px-4 py-1">
               Login to your Account
             </div>

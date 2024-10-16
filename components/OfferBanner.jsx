@@ -111,7 +111,7 @@ useEffect(() => {
                     : "/assets/eng-bud-banner-demo.png"
                 }
                 alt="offer-banner-image"
-                className="w-full lg:h-[auto] md:h-[auto] max-sm:h-[auto]"
+                className="w-full lg:h-[400] md:h-[300] max-sm:h-[200]"
               />
             </SwiperSlide>
           ))}
